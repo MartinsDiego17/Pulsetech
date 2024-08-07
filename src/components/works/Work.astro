@@ -1,0 +1,63 @@
+---
+import labarra from "../../../images/works/labarra.jpeg";
+---
+
+<div
+    class="relative flex justify-center place-items-center w-[30vw] h-[30vh] bg-white mx-[3vw] brightness-150 bg-cover bg-center"
+    style="background-image: url('../../../images/works/labarra.jpeg'); "
+>
+    <a href="#" class="m-auto absolute z-[20] opacity-0">
+        <button
+            class="gap-x-2 rounded-full brightness-75 hover:brightness-[85%] transition duration-500 bg-primary py-[.5vw] px-[2vw]"
+        >
+            <span>Ver sitio</span>
+            <span><i class="opacity-50 fa-solid fa-link"></i></span>
+        </button>
+    </a>
+</div>
+
+<style>
+    @keyframes openMock {
+        from {
+            height: 0;
+            border-top-right-radius: 500px;
+            border-top-left-radius: 500px;
+        }
+        to {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            height: 100%;
+        }
+    }
+
+    div {
+        position: relative;
+        z-index: 10;
+        overflow: hidden;
+        background-size: cover; /* Asegura que la imagen cubra el div */
+        background-position: center; /* Centra la imagen en el div */
+    }
+
+    div::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0;
+        pointer-events: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        transition: opacity 0.4s;
+        opacity: 0;
+    }
+
+    div:hover::before {
+        opacity: 1;
+        animation: openMock 0.4s forwards;
+    }
+    div:hover a {
+        opacity: 1;
+    }
+</style>

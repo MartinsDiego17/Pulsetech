@@ -1,0 +1,35 @@
+<div id="contact" class="lazy-section relative container-contact w-screen h-screen p-[5vh] justify-center flex flex-col place-items-center mb-[30vh]">
+    <h1 class="my-[1vh] text-white font-bold text-[4rem]">VAMOS A TRABAJAR</h1>
+
+    <article class="my-[1vh] bg-[#222] w-fit mx-auto h-fit p-[1vh] rounded-full">
+        <button class="transition duration-200 hover:bg-[#08c199] py-[1.5vh] px-[2vh] first-button text-[.8rem] m-0 bg-primary rounded-full text-black">Coordinar una reunión</button>
+        <button class="py-[1.5vh] transition duration-200 hover:text-[#a4f6da] px-[2vh] text-[.8rem] m-0 bg-transparent rounded-full text-primary">O envíanos un mensaje directo</button>
+    </article>
+
+</div>
+
+<style>
+    .container-contact {
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../../images/contact/bgcontact.webp);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .first-button {
+        box-shadow: 0px 0px 50px #026353;
+    }
+    .first-button:hover {
+        box-shadow: 0px 0px 150px #08c199;
+    }
+    .container-contact::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        pointer-events: none;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background: linear-gradient(black, transparent, transparent, transparent, transparent);
+    }
+</style>

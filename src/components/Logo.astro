@@ -1,0 +1,23 @@
+---
+const { size } = Astro.props;
+let remsClass = "";
+
+if(size === "small") {
+    remsClass = "text-[1.2rem]"
+} 
+else if(size === "big") {
+    remsClass = "text-[4.5rem]"
+}
+---
+
+<div id="logo" class={`w-fit h-fit p-0 m-0 ${remsClass}`}>
+    <h1 class="text-[white] font-semibold">
+        PULSE<span class="text-primary">TECH</span>
+    </h1>
+</div>
+
+<style>
+    h1 {
+        letter-spacing: 2px;
+    }
+</style>

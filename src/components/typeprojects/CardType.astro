@@ -1,0 +1,93 @@
+---
+interface Properties {
+    title: string;
+    image: string;
+    features: string[];
+}
+
+const { title, image, features } = Astro.props as Properties;
+---
+
+<div class="container">
+    <div
+        class="card p-[2vw] h-[80vh] flex place-items-center flex-col"
+        style="--clr: #a3f7da"
+    >
+        <h1 class="text-[#eee] text-center text-[1.3rem]">{title}</h1>
+        <img src={image} class="top-16 w-4/5 h-[25vh]" alt={title} />
+        <ul
+            class={`w-4/5 mx-auto top-64 h-[32vh] overflow-hidden ${features.length > 8 && "hover:overflow-y-scroll"} `}
+        >
+            {
+                features.map((feature) => (
+                    <li class="mb-[1vh] text-[.8rem] opacity-70 text-[#eee]">
+                        <i class="text-[#2cdbaf] mr-[2%] fa-solid fa-check" />
+                        {feature}
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</div>
+
+<script src="../typeprojects/script.js"></script>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+    .container .card {
+        position: relative;
+        width: 25vw;
+        height: 80vh;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: 0.2s;
+    }
+
+    .container .card:hover {
+        transform: translateY(-8px);
+    }
+    .container .card::before {
+        content: "";
+        position: absolute;
+        top: var(--y);
+        left: var(--x);
+        transform: translate(-50%, -50%);
+        background: radial-gradient(var(--clr), transparent, transparent);
+        width: 1000px;
+        transition:
+            0.2s,
+            top 0s,
+            left 0s;
+        height: 1000px;
+        opacity: 0;
+    }
+    .container .card:hover::before {
+        opacity: 1;
+    }
+    .container .card::after {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        border-radius: 5px;
+        background-color: rgba(0, 46, 40, 0.9);
+    }
+    .card h1,
+    .card img,
+    .card ul {
+        position: absolute;
+        z-index: 5;
+    }
+    ul::-webkit-scrollbar {
+        width: 3px;
+    }
+    ul::-webkit-scrollbar-thumb {
+        background-color: #002e28;
+    }
+</style>
+

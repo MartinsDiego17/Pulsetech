@@ -1,0 +1,48 @@
+---
+import CardBeneficio from "./beneficios/CardBeneficio.astro";
+---
+
+<article id="benefits" class="lazy-section beneficios h-fit min-h-screen w-screen py-[5vh] mb-[30vh] ">
+    <h1 class="title-section w-3/5 mx-auto font-bold mb-[5%]">
+        Beneficios de trabajar con nosotros
+    </h1>
+    <section class="w-[60%] mx-auto grid grid-cols-2 gap-2">
+        <CardBeneficio
+            className="1"
+            iconClass="fa-solid fa-arrow-trend-up"
+            title="Escalabilidad"
+            paragraph="En PULSETECH conocemos las necesidades de nuestros clientes por lo que sabemos que es fundamental que sus negocios puedan escalar acorde a las necesidades que vayan surgiendo en el camino, por lo que nuestros productos son modificables y mejorables a travez del tiempo."
+        />
+        <CardBeneficio
+            className="2"
+            iconClass="fa-solid fa-network-wired"
+            title="Optimización de SEO"
+            paragraph="El SEO de una aplicación es uno de los puntos más importantes a la hora del posicionamiento de un sitio web, por lo que estamos comprometidos con que el contenido y la estructura de tu página web estén optimizados para los motores de búsqueda, garantizando así una mayor visibilidad y alcance."
+        />
+        <CardBeneficio
+            className="3"
+            iconClass="fa-solid fa-arrows-rotate"
+            title="Actualización continua"
+            paragraph="La actualización continua es clave para mantener la relevancia y el buen funcionamiento de tu aplicación. En PULSETECH nos aseguramos de que nuestros productos reciban mejoras periódicas, integrando nuevas funcionalidades y optimizaciones para adaptarse a los cambios del mercado y a las demandas de los usuarios."
+
+        />
+    </section>
+</article>
+
+<style is:global>
+    .beneficios {
+        background-color: transparent;
+    }
+    .item1 {
+        grid-column: span 2;
+    }
+    .item2,
+    .item3 {
+        grid-column: span 1;
+    }
+    .cardContainer {
+        padding: 2vw;
+        transition: .2s;
+        background-color: #191919;
+    }   
+</style>

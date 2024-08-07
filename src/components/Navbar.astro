@@ -1,0 +1,50 @@
+---
+import Logo from "./Logo.astro";
+import MenuPop from "./header/MenuPop";
+---
+
+<nav
+    id="nav-bar"
+    class="z-50 flex justify-between px-[7vw] py-[3vh] place-items-center fixed top-0 w-screen h-fit"
+>
+    <Logo size="small" />
+    <ul class="flex gap-x-10 place-items-center">
+        <li class="inicio text-[.8rem] text-primary"><a>Inicio</a></li>
+        <li class="paginas text-[.8rem] text-[#eee]">Páginas</li>
+        <li class="bene text-[.8rem] text-[#eee]">Beneficios</li>
+        <li class="trabajos text-[.8rem] text-[#eee]">Trabajos</li>
+        <li class="profesionales text-[.8rem] text-[#eee]">Profesionales</li>
+        <li class="contacto text-[.8rem] text-[#eee]">Contacto</li>
+        <MenuPop client:visible />
+    </ul>
+</nav>
+
+<style>
+    h1 {
+        font-size: 2rem;
+    }
+
+    @keyframes blurnav {
+        20% {
+            border-color: #222;
+        }
+        100% {
+            background: rgba(0, 0, 0, 0.5);
+            -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(30px);
+            border-color: #222;
+            transition: 0.3s;
+        }
+    }
+
+    nav {
+        animation: blurnav linear both;
+        animation-timeline: scroll();
+        border-bottom: solid 1px transparent;
+        animation-range: 0 500px;
+        transition: 0.2s;
+    }
+    ul li {
+        cursor: pointer;
+    }
+</style>

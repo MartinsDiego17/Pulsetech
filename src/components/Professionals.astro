@@ -1,0 +1,57 @@
+---
+import chris from "../../images/professionals/chris.jpg";
+import jona from "../../images/professionals/jona.png";
+import dami from "../../images/professionals/dami.jpg";
+import diego from "../../images/professionals/diego.png";
+
+const professionals = [
+    {
+        image: chris.src,
+        name: "Christian Natale",
+        linkedin: "https://www.linkedin.com/in/christian-natale-/",
+        github: "https://github.com/Chrisnatalx",
+        description: "Full stack developer",
+    },
+    {
+        image: jona.src,
+        name: "Gabriel Juarez",
+        linkedin: "https://www.linkedin.com/in/gabriel-juarez-720998240/",
+        github: "https://github.com/zuoki",
+        description: "Full stack developer",
+    },
+    {
+        image: dami.src,
+        name: "Damián diaz",
+        linkedin: "https://www.linkedin.com/in/damian-diaz-6a7537258/",
+        github: "https://github.com/Diaz027",
+        description: "Full stack developer",
+    },
+    {
+        image: diego.src,
+        name: "Diego Martins",
+        linkedin: "https://www.linkedin.com/in/diego-martins-563954278/",
+        github: "https://github.com/MartinsDiego17/",
+        description: "Full stack developer",
+    },
+];
+import CardProfessional from "./professionals/CardProfessional.astro";
+---
+
+<div id="professionals" class="lazy-section mb-[40vh]">
+    <h2 class="title-section mb-[5vh] font-bold w-4/5 mx-auto text-left">
+        Equipo de profesionales
+    </h2>
+    <section class="w-4/5 mx-auto grid grid-cols-4 gap-16">
+        {
+            professionals.map((pro) => (
+                <CardProfessional
+                    image={pro.image}
+                    name={pro.name}
+                    linkedin={pro.linkedin}
+                    github={pro.github}
+                    description={pro.description}
+                />
+            ))
+        }
+    </section>
+</div>
