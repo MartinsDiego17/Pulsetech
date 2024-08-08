@@ -1,6 +1,23 @@
 {
     "layout": {
-        "title": "Prueba - Desarrollo y diseño web"
+        "title": "Pulsetech - Desarrollo y diseño web"
+    },
+    "nav_bar" : {
+        "elements": [
+            "Inicio",
+            "Páginas",
+            "Beneficios",
+            "Trabajos",
+            "Profesionales",
+            "Contacto"
+        ],
+        "popover_elements": {
+            "meet" : "Coordinar reunión",
+            "language" : "Lenguaje",
+            "spanish" : "Español",
+            "english": "Inglés",
+            "theme" : "Tema oscuro"
+        }  
     },
     "home": {
         "paragraph": "Desarrollo y diseño web",
@@ -8,5 +25,99 @@
         "second_text": "en tan solo unas semanas",
         "second_paragraph": "Somos una compañía centrada y comprometida con el desarrollo de productos que le permitan a nuestros clientes y a empresas escalar su negocio al siguiente nivel.",
         "button_text": "Trabaja con nosotros"
+    },
+    "type_pages": {
+        "title": "¿Qué tipo de páginas desarrollamos?",
+        "first_type": {
+            "type": "E-commerce",
+            "checklist": [
+                "Carrito de compras",
+                "Pasarela de pagos segura",
+                "Catálogo de productos",
+                "Filtros y búsqueda avanzada",
+                "Reseñas y calificaciones",
+                "Ofertas y descuentos",
+                "Gestión de inventario",
+                "Seguimiento de pedidos",
+                "Chat en vivo",
+                "Registro de usuarios y cuentas",
+                "Recomendaciones personalizadas",
+                "Análisis y reportes"
+            ]
+        },
+        "second_type": {
+            "type": "Landing page",
+            "checklist": [
+                "Titulado atractivo",
+                "Call to action",
+                "Formulario de contacto/registro",
+                "Sección de beneficios",
+                "Testimonios y reseñas",
+                "Imágenes y videos atractivos",
+                "Timeout para eventos",
+                "Preguntas frecuentes (FAQ)",
+                "Mapa de ubicación",
+                "SEO Optimizado",
+                "Animaciones y efectos"
+            ]
+        },
+        "third_type": {
+            "type": "Personalizada",
+            "checklist": [
+                "Diseño a medida",
+                "Integración de funcionalidades específicas",
+                "Optimización para móviles",
+                "Animaciones y transiciones personalizadas",
+                "Gestión de contenidos",
+                "Formularios dinámicos",
+                "SEO Optimizado",
+                "Interactividad avanzada",
+                "Accesibilidad y seguridad",
+                "Integración de API",
+                "Analítica personalizada"
+            ]
+        }
+    },
+    "benefits": {
+        "title": "Beneficios de trabajar con nosotros",
+        "first_benefit": {
+            "benefit": "Escalabilidad",
+            "text": "En PULSETECH conocemos las necesidades de nuestros clientes por lo que sabemos que es fundamental que sus negocios puedan escalar acorde a las necesidades que vayan surgiendo en el camino, por lo que nuestros productos son modificables y mejorables a travez del tiempo."
+        },
+        "second_benefit": {
+            "benefit": "Optimización de SEO",
+            "text": "El SEO de una aplicación es uno de los puntos más importantes a la hora del posicionamiento de un sitio web, por lo que estamos comprometidos con que el contenido y la estructura de tu página web estén optimizados para los motores de búsqueda, garantizando así una mayor visibilidad y alcance."
+        },
+        "third_benefit": {
+            "benefit": "Actualización continua",
+            "text": "La actualización continua es un punto clave en nuestras metodologías de trabajo. Nos esforzamos por aprender y adoptar constantemente las nuevas tecnologías y herramientas del mercado. Esto nos permite asegurar que los productos de nuestros clientes se beneficien de las soluciones más eficientes y avanzadas disponibles."
+        }
+    },
+    "professionals": {
+        "title": "Equipo de profesionales"
+    },
+    "go_work": {
+        "title": "Vamos a trabajar",
+        "first_button": "Coordinar una reunión",
+        "second_button": "O envíanos un mensaje directo"
+    },
+    "footer": {
+        "categories" : {
+            "title" : "Categorías",
+            "sections": [
+                "Inicio",
+                "Tipos de aplicaciones",
+                "Beneficios",
+                "Trabajos",
+                "Profesionales",
+                "Contacto"
+            ]
+        },
+        "contact" : {
+            "title": "Contáctanos"
+        },
+        "follow": {
+            "title" : "Síguenos en Instagram"
+        }
     }
 }

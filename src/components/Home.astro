@@ -8,7 +8,7 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
 
 <main
     id="home"
-    class="lazy-section home relative leading-none px-[7vw] main h-screen w-screen flex justify-center place-items-center"
+    class="home relative leading-none px-[7vw] main h-screen w-screen flex justify-center place-items-center"
 >
     <div class="flex justify-center flex-col">
         <p
@@ -42,6 +42,18 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
         background-size: cover;
         background-position: top;
         background-repeat: no-repeat;
+    }
+    @keyframes opacity-home {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+	.home {
+        animation: opacity-home 1s ease-in;
     }
     .main div {
     }

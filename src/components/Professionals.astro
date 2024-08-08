@@ -35,12 +35,12 @@ const professionals = [
     },
 ];
 import CardProfessional from "./professionals/CardProfessional.astro";
+const { content } = Astro.props;
+const { title } = content;
 ---
 
 <div id="professionals" class="lazy-section mb-[40vh]">
-    <h2 class="title-section mb-[5vh] font-bold w-4/5 mx-auto text-left">
-        Equipo de profesionales
-    </h2>
+    <h2 class="title-section mb-[5vh] font-bold w-4/5 mx-auto text-left">{title}</h2>
     <section class="w-4/5 mx-auto grid grid-cols-4 gap-16">
         {
             professionals.map((pro) => (

@@ -2,6 +2,17 @@ interface LayoutConfig {
     title: string;
 }
 
+interface NavbarConfig {
+    elements: string[]
+    popover_elements: {
+        meet: string
+        language: string
+        spanish: string
+        english: string
+        theme: string
+    }
+}
+
 interface HomeConfig {
     paragraph: string;
     first_text: string;
@@ -10,13 +21,81 @@ interface HomeConfig {
     button_text: string;
 }
 
+interface TypepagesConfig {
+    title: string
+    first_type: {
+        type: string
+        checklist: string[]
+    }
+    second_type: {
+        type: string
+        checklist: string[]
+    }
+    third_type: {
+        type: string
+        checklist: string[]
+    }
+}
+
+interface BenefitsConfig {
+    title: string
+    first_benefit: {
+        benefit: string
+        text: string
+    }
+    second_benefit: {
+        benefit: string
+        text: string
+    }
+    third_benefit: {
+        benefit: string
+        text: string
+    }
+}
+
+interface ProfessionalsConfig {
+    title: string
+}
+
+interface GoworkConfig {
+    title: string
+    first_button: string
+    second_button: string
+}
+
+interface FooterConfig {
+    categories: {
+        title: string
+        sections: string[]
+    }
+    contact: {
+        title: string
+    }
+    follow: {
+        title: string
+    }
+}
+
 import { getI18N } from "../lenguajes";
 const i18n = getI18N({ currentLocale: "es" });
 
 const layout: LayoutConfig = i18n.layout;
+const navbar: NavbarConfig = i18n.nav_bar;
 const home: HomeConfig = i18n.home;
+const type_pages: TypepagesConfig = i18n.type_pages;
+const benefits: BenefitsConfig = i18n.benefits;
+const professionals: ProfessionalsConfig = i18n.professionals;
+const go_work: GoworkConfig = i18n.go_work;
+const footer: FooterConfig = i18n.footer;
+
 
 export const contents = {
     layout,
-    home
+    navbar,
+    home,
+    type_pages,
+    benefits,
+    professionals,
+    go_work,
+    footer
 }

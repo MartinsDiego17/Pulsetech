@@ -1,26 +1,30 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 const { title } = Astro.props;
 import "@fontsource-variable/inter";
 import Navbar from "../components/Navbar.astro";
+import { getI18N } from "../lenguajes";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const navbar = i18n.nav_bar;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon2.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-		<Navbar />
-	</body>
+<html lang={currentLocale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon2.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <Navbar content={navbar} />
+  </body>
 </html>
 
 <style is:global>

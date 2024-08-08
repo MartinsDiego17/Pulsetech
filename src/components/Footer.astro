@@ -1,22 +1,20 @@
+---
+const { content } = Astro.props;
+const { categories, contact, follow } = content;
+---
+
 <div
     id="footer"
     class="border-t-1 border-[#252525] flex justify-between w-screen px-[15vw] py-[7vh] h-fit bg-[#161616] text-[#eee]"
 >
     <article>
-        <h3 class="text-white font-bold text-[1rem]">Categorías</h3>
+        <h3 class="text-white font-bold text-[1rem]">{categories.title}</h3>
         <ul>
-            <li>Inicio</li>
-            <li>Tipos de aplicaciones</li>
-            <li>Beneficios</li>
-            <li>Trabajos</li>
-            <li>Profesionales</li>
-            <li>Contacto</li>
+            {categories.sections.map((sec: string) => <li>{sec}</li>)}
         </ul>
     </article>
     <article class="center">
-        <h3 class="text-center text-white font-bold text-[1rem]">
-            Contáctanos
-        </h3>
+        <h3 class="text-center text-white font-bold text-[1rem]">{contact.title}</h3>
         <ul>
             <li>
                 <i class="fa-brands fa-whatsapp pr-[.5vw]"></i>+54 9 3417506932
@@ -31,9 +29,7 @@
         </ul>
     </article>
     <article class="last">
-        <h3 class="text-white font-bold text-[1rem] text-right">
-            Síguenos en Instagram
-        </h3>
+        <h3 class="text-white font-bold text-[1rem] text-right">{follow.title}</h3>
         <a
             href="#"
             class="ml-auto bg-[#009d7e] hover:bg-[#68edc7] hover:text-black w-[3vw] cursor-pointer transition duration-200 flex justify-center rounded-full place-items-center h-[3vw]"

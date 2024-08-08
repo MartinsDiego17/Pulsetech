@@ -1,6 +1,8 @@
 ---
 import Logo from "./Logo.astro";
 import MenuPop from "./header/MenuPop";
+const { content } = Astro.props;
+const { elements, popover_elements } = content;
 ---
 
 <nav
@@ -9,13 +11,13 @@ import MenuPop from "./header/MenuPop";
 >
     <Logo size="small" />
     <ul class="flex gap-x-10 place-items-center">
-        <li class="inicio text-[.8rem] text-primary"><a>Inicio</a></li>
-        <li class="paginas text-[.8rem] text-[#eee]">Páginas</li>
-        <li class="bene text-[.8rem] text-[#eee]">Beneficios</li>
-        <li class="trabajos text-[.8rem] text-[#eee]">Trabajos</li>
-        <li class="profesionales text-[.8rem] text-[#eee]">Profesionales</li>
-        <li class="contacto text-[.8rem] text-[#eee]">Contacto</li>
-        <MenuPop client:visible />
+        <li class="inicio text-[.8rem] text-primary"><a>{elements[0]}</a></li>
+        <li class="paginas text-[.8rem] text-[#eee]">{elements[1]}</li>
+        <li class="bene text-[.8rem] text-[#eee]">{elements[2]}</li>
+        <li class="trabajos text-[.8rem] text-[#eee]">{elements[3]}</li>
+        <li class="profesionales text-[.8rem] text-[#eee]">{elements[4]}</li>
+        <li class="contacto text-[.8rem] text-[#eee]">{elements[5]}</li>
+        <MenuPop client:visible content={popover_elements} />
     </ul>
 </nav>
 
@@ -40,8 +42,8 @@ import MenuPop from "./header/MenuPop";
     nav {
         animation: blurnav linear both;
         animation-timeline: scroll();
-        border-bottom: solid 1px transparent;
         animation-range: 0 500px;
+        border-bottom: solid 1px transparent;
         transition: 0.2s;
     }
     ul li {

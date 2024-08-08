@@ -3,71 +3,28 @@ import ecommerce from "../../images/typeprojects/ecommerce.jpg";
 import landing from "../../images/typeprojects/landing.jpg";
 import personalice from "../../images/typeprojects/personalice.png";
 import CardType from "./typeprojects/CardType.astro";
-const featuresEcommerce = [
-    "Carrito de Compras",
-    "Pasarela de Pago Segura",
-    "Catálogo de Productos",
-    "Filtros y Búsqueda Avanzada",
-    "Reseñas y Calificaciones",
-    "Ofertas y Descuentos",
-    "Gestión de Inventario",
-    "Seguimiento de Pedidos",
-    "Chat en Vivo",
-    "Registro de Usuarios y Cuentas",
-    "Recomendaciones Personalizadas",
-    "Análisis y reportes"
-];
-const featuresLanding = [
-    "Titulado atractivo",
-    "Call to action",
-    "Formulario de Contacto/Registro",
-    "Sección de Beneficios",
-    "Testimonios y Reseñas",
-    "Imágenes y Videos Atractivos",
-    "Timeout para eventos",
-    "Preguntas Frecuentes (FAQ)",
-    "Mapa de Ubicación",
-    "SEO Optimizado",
-    "Animaciones y efectos"
-];
-
-const featuresCustom = [
-    "Diseño a Medida",
-    "Integración de Funcionalidades Específicas",
-    "Optimización para Móviles",
-    "Animaciones y Transiciones Personalizadas",
-    "Gestión de Contenidos",
-    "Formularios Dinámicos",
-    "SEO Avanzado",
-    "Interactividad Avanzada",
-    "Accesibilidad Mejorada",
-    "Integración de API",
-    "Analítica Personalizada",
-    "Seguridad Mejorada"
-];
-
+const { content } = Astro.props;
+const { title, first_type, second_type, third_type } = content;
 ---
 
-<article id="type-pages" class="lazy-section py-[5vw] w-screen h-fit mb-[30vh]">
-    <h1 class="w-4/5 mx-auto title-section font-bold mb-[5%]">
-        ¿Qué tipo de páginas desarrollamos?
-    </h1>
+<article id="type-pages" class="py-[5vw] w-screen h-fit mb-[30vh]">
+    <h1 class="w-4/5 mx-auto title-section font-bold mb-[5%]">{title}</h1>
 
     <section class="w-[80%] mx-auto grid grid-cols-3 gap-10">
         <CardType
-            title={"E-commerce"}
+            title={first_type.type}
             image={ecommerce.src}
-            features={featuresEcommerce}
+            features={first_type.checklist}
         />
         <CardType
-            title={"Landing page"}
+            title={second_type.type}
             image={landing.src}
-            features={featuresLanding}
+            features={second_type.checklist}
         />
         <CardType
-            title={"Personalizada"}
+            title={third_type.type}
             image={personalice.src}
-            features={featuresCustom}
+            features={third_type.checklist}
         />
     </section>
 </article>

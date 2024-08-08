@@ -1,12 +1,123 @@
 {
     "layout": {
-        "title": "Prueba - Desarrollo y diseño web"
+        "title": "Pulsetech - Web Development and Design"
+    },
+    "nav_bar": {
+        "elements": [
+            "Home",
+            "Pages",
+            "Benefits",
+            "Jobs",
+            "Professionals",
+            "Contact"
+        ],
+        "popover_elements": {
+            "meet": "Schedule a Meeting",
+            "language" : "Language",
+            "spanish" : "Spanish",
+            "english": "English",
+            "theme": "Dark Theme"
+        }
     },
     "home": {
-        "paragraph": "Desarrollo y diseño web",
-        "first_text": "Desarrollamos tu aplicación",
-        "second_text": "en tan solo unas semanas",
-        "second_paragraph": "Somos una compañía centrada y comprometida con el desarrollo de productos que le permitan a nuestros clientes y a empresas escalar su negocio al siguiente nivel.",
-        "button_text": "Trabaja con nosotros"
+        "paragraph": "Web Development and Design",
+        "first_text": "We develop your application",
+        "second_text": "in just a few weeks",
+        "second_paragraph": "We are a company focused and committed to developing products that allow our clients and businesses to scale their operations to the next level.",
+        "button_text": "Work with Us"
+    },
+    "type_pages": {
+        "title": "What Types of Pages Do We Develop?",
+        "first_type": {
+            "type": "E-commerce",
+            "checklist": [
+                "Shopping Cart",
+                "Secure Payment Gateway",
+                "Product Catalog",
+                "Advanced Filters and Search",
+                "Reviews and Ratings",
+                "Offers and Discounts",
+                "Inventory Management",
+                "Order Tracking",
+                "Live Chat",
+                "User Registration and Accounts",
+                "Personalized Recommendations",
+                "Analytics and Reports"
+            ]
+        },
+        "second_type": {
+            "type": "Landing Page",
+            "checklist": [
+                "Catchy Headline",
+                "Call to Action",
+                "Contact/Registration Form",
+                "Benefits Section",
+                "Testimonials and Reviews",
+                "Engaging Images and Videos",
+                "Event Countdown Timer",
+                "Frequently Asked Questions (FAQ)",
+                "Location Map",
+                "SEO Optimized",
+                "Animations and Effects"
+            ]
+        },
+        "third_type": {
+            "type": "Custom",
+            "checklist": [
+                "Tailored Design",
+                "Integration of Specific Features",
+                "Mobile Optimization",
+                "Custom Animations and Transitions",
+                "Content Management",
+                "Dynamic Forms",
+                "SEO Optimized",
+                "Advanced Interactivity",
+                "Accessibility and Security",
+                "API Integration",
+                "Custom Analytics"
+            ]
+        }
+    },
+    "benefits": {
+        "title": "Benefits of Working with Us",
+        "first_benefit": {
+            "benefit": "Scalability",
+            "text": "At PULSETECH, we understand our clients' needs, and we know that it's crucial for their businesses to scale according to emerging demands. That's why our products are adaptable and can be improved over time."
+        },
+        "second_benefit": {
+            "benefit": "SEO Optimization",
+            "text": "SEO is one of the most important factors in website positioning. We are committed to ensuring that your website's content and structure are optimized for search engines, guaranteeing greater visibility and reach."
+        },
+        "third_benefit": {
+            "benefit": "Continuous Updates",
+            "text": "Continuous updates are a key point in our work methodologies. We strive to constantly learn and adopt new technologies and tools from the market. This ensures that our clients' products benefit from the most efficient and advanced solutions available."
+        }
+    },
+    "professionals": {
+        "title": "Team of Professionals"
+    },
+    "go_work": {
+        "title": "Let's Get to Work",
+        "first_button": "Schedule a Meeting",
+        "second_button": "Or Send Us a Direct Message"
+    },
+    "footer": {
+        "categories": {
+            "title": "Categories",
+            "sections": [
+                "Home",
+                "Types of Applications",
+                "Benefits",
+                "Jobs",
+                "Professionals",
+                "Contact"
+            ]
+        },
+        "contact": {
+            "title": "Contact Us"
+        },
+        "follow": {
+            "title": "Follow Us on Instagram"
+        }
     }
 }

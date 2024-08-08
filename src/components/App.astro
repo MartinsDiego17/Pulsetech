@@ -1,5 +1,5 @@
 ---
-import About from "./TypeProjects.astro";
+import TypeProjects from "./TypeProjects.astro";
 import Home from "./Home.astro";
 import Layout from "../layouts/Layout.astro";
 import Beneficios from "./Beneficios.astro";
@@ -9,18 +9,24 @@ import Contacto from "./Contacto.astro";
 import Footer from "./Footer.astro";
 import { contents } from "../config-i18n/config-i18n.ts";
 
-const { layout, home } = contents;
+const { layout, home, type_pages, benefits, professionals, go_work, footer } = contents;
+interface AstroInterface {
+  currentLocale: any;
+}
 
+import { getI18N } from "../lenguajes";
+const { currentLocale }: AstroInterface = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Layout title={layout.title}>
     <Home content={home} />
-    <About />
-    <Beneficios />
+    <TypeProjects content={type_pages} />
+    <Beneficios content={benefits} />
     <Works />
-    <Professionals />
-    <Contacto />
-    <Footer />
+    <Professionals content={professionals} />
+    <Contacto content={go_work} />
+    <Footer content={footer} />
 </Layout>
 
 <!-- <script src="../scripts/lazyload.js"></script> -->

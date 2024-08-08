@@ -1,9 +1,14 @@
+---
+const { content } = Astro.props;
+const { title, first_button, second_button } = content; 
+---
+
 <div id="contact" class="lazy-section relative container-contact w-screen h-screen p-[5vh] justify-center flex flex-col place-items-center mb-[30vh]">
-    <h1 class="my-[1vh] text-white font-bold text-[4rem]">VAMOS A TRABAJAR</h1>
+    <h1 class="my-[1vh] text-white font-bold text-[4rem]">{title.toUpperCase()}</h1>
 
     <article class="my-[1vh] bg-[#222] w-fit mx-auto h-fit p-[1vh] rounded-full">
-        <button class="transition duration-200 hover:bg-[#08c199] py-[1.5vh] px-[2vh] first-button text-[.8rem] m-0 bg-primary rounded-full text-black">Coordinar una reunión</button>
-        <button class="py-[1.5vh] transition duration-200 hover:text-[#a4f6da] px-[2vh] text-[.8rem] m-0 bg-transparent rounded-full text-primary">O envíanos un mensaje directo</button>
+        <button class="transition duration-200 hover:bg-[#08c199] py-[1.5vh] px-[2vh] first-button text-[.8rem] m-0 bg-primary rounded-full text-black">{first_button}</button>
+        <button class="py-[1.5vh] transition duration-200 hover:text-[#a4f6da] px-[2vh] text-[.8rem] m-0 bg-transparent rounded-full text-primary">{second_button}</button>
     </article>
 
 </div>

@@ -1,31 +1,33 @@
 ---
 import CardBeneficio from "./beneficios/CardBeneficio.astro";
+const { content } = Astro.props;
+const { title, first_benefit, second_benefit, third_benefit } = content;
 ---
 
-<article id="benefits" class="lazy-section beneficios h-fit min-h-screen w-screen py-[5vh] mb-[30vh] ">
-    <h1 class="title-section w-3/5 mx-auto font-bold mb-[5%]">
-        Beneficios de trabajar con nosotros
-    </h1>
-    
+<article
+    id="benefits"
+    class="lazy-section beneficios h-fit min-h-screen w-screen py-[5vh] mb-[30vh]"
+>
+    <h1 class="title-section w-3/5 mx-auto font-bold mb-[5%]">{title}</h1>
+
     <section class="w-[60%] mx-auto grid grid-cols-2 gap-2">
         <CardBeneficio
             className="1"
             iconClass="fa-solid fa-arrow-trend-up"
-            title="Escalabilidad"
-            paragraph="En PULSETECH conocemos las necesidades de nuestros clientes por lo que sabemos que es fundamental que sus negocios puedan escalar acorde a las necesidades que vayan surgiendo en el camino, por lo que nuestros productos son modificables y mejorables a travez del tiempo."
+            title={first_benefit.benefit}
+            paragraph={first_benefit.text}
         />
         <CardBeneficio
             className="2"
             iconClass="fa-solid fa-network-wired"
-            title="Optimización de SEO"
-            paragraph="El SEO de una aplicación es uno de los puntos más importantes a la hora del posicionamiento de un sitio web, por lo que estamos comprometidos con que el contenido y la estructura de tu página web estén optimizados para los motores de búsqueda, garantizando así una mayor visibilidad y alcance."
+            title={second_benefit.benefit}
+            paragraph={second_benefit.text}
         />
         <CardBeneficio
             className="3"
             iconClass="fa-solid fa-arrows-rotate"
-            title="Actualización continua"
-            paragraph="La actualización continua es un punto clave en nuestras metodologías de trabajo. Nos esforzamos por aprender y adoptar constantemente las nuevas tecnologías y herramientas del mercado. Esto nos permite asegurar que los productos de nuestros clientes se beneficien de las soluciones más eficientes y avanzadas disponibles."
-
+            title={third_benefit.benefit}
+            paragraph={third_benefit.text}
         />
     </section>
 </article>
@@ -43,7 +45,7 @@ import CardBeneficio from "./beneficios/CardBeneficio.astro";
     }
     .cardContainer {
         padding: 2vw;
-        transition: .2s;
+        transition: 0.2s;
         background-color: #191919;
-    }   
+    }
 </style>
