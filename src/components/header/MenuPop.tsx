@@ -40,7 +40,7 @@ const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
   };
 
   return (
-    <Popover placement="bottom">
+    <Popover placement="bottom-end">
       <PopoverTrigger>
         <button className="outline-none">
           <li className="text-[.8rem] text-white">
@@ -48,39 +48,39 @@ const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
           </li>
         </button>
       </PopoverTrigger>
-      <PopoverContent className="border border-[#222] px-0 w-[20vw] flex dark">
+      <PopoverContent className="lg:leading-[2.5] border border-[#222] lg:w-[70vw] lg:px-[10px] px-0 w-[20vw] flex dark">
         <div className="text-[#ccc] py-[.5vw] w-full flex flex-col">
-          <p className="mx-[.5vw] text-[.8rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
+          <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
             {content.meet}
           </p>
 
           <div>
-            <p className="mx-[.5vw] text-[.8rem] p-[.5vw] my-[.4vw] mb-[0] rounded-md">
+            <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] p-[.5vw] my-[.4vw] mb-[0] rounded-md">
               {content.language} <i className="pl-[.5vw] text-primary fa-solid fa-earth-americas"></i>
             </p>
             <button
               onClick={() => handleLanguage(event, "/")}
               disabled={disabled.es}
-              className="disabled:opacity-50 disabled:cursor-default disabled:hover:bg-transparent w-[19vw] text-left mx-[.5vw] text-[.65rem] hover:bg-[#222] cursor-pointer p-[.5vw] rounded-md"
+              className="disabled:opacity-50 disabled:cursor-default disabled:hover:bg-transparent w-[95%] text-left mx-[.5vw] text-[.65rem] 2xl:text-[.8rem] hover:bg-[#222] cursor-pointer p-[.5vw] rounded-md"
             >
               {content.spanish}
             </button> <br />
             <button
               onClick={() => handleLanguage(event, "en")}
               disabled={disabled.en}
-              className="disabled:opacity-50 disabled:cursor-default disabled:hover:bg-transparent w-[19vw] text-left mx-[.5vw] text-[.65rem] hover:bg-[#222] cursor-pointer p-[.5vw] rounded-md"
+              className="disabled:opacity-50 disabled:cursor-default disabled:hover:bg-transparent w-[95%] text-left mx-[.5vw] text-[.65rem] 2xl:text-[.8rem] hover:bg-[#222] cursor-pointer p-[.5vw] rounded-md"
             >
               {content.english}
             </button>
           </div>
 
-          <hr className="w-[20vw] mt-[1vw] border-[#333]" />
+          <hr className="w-full mt-[1vw] border-[#333]" />
 
           <div className="px-[.5vw] mt-[1vw] w-full flex justify-between place-items-center">
-            <p className="text-[.8rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
+            <p className="2xl:text-[1rem] text-[.8rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
               {content.theme}
             </p>
-            <Switch defaultSelected aria-label="Automatic updates" />
+            <Switch id="switcher" defaultSelected aria-label="Automatic updates" />
           </div>
         </div>
       </PopoverContent>

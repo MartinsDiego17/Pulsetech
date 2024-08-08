@@ -10,17 +10,17 @@ const { title, image, features } = Astro.props as Properties;
 
 <div class="container">
     <div
-        class="card p-[2vw] h-[80vh] flex place-items-center flex-col"
+        class="card p-[2vw] lg:py-[2vh] h-[80vh] flex place-items-center flex-col"
         style="--clr: #a3f7da"
     >
         <h1 class="text-[#eee] text-center text-[1.3rem]">{title}</h1>
-        <img src={image} class="top-16 w-4/5 h-[25vh]" alt={title} />
+        <img src={image} class="2xl:h-[20vh] top-16 2xl:top-24 w-4/5 lg:h-[18vh] h-[25vh]" alt={title} />
         <ul
-            class={`w-4/5 mx-auto top-64 h-[32vh] overflow-hidden ${features.length > 8 && "hover:overflow-y-scroll"} `}
+            class={`2xl:top-[380px] lg:top-[250px] w-4/5 mx-auto top-64 h-[32vh] overflow-hidden ${features.length > 8 && "hover:overflow-y-scroll"} `}
         >
             {
                 features.map((feature) => (
-                    <li class="mb-[1vh] text-[.8rem] opacity-70 text-[#eee]">
+                    <li class="mb-[1vh] 2xl:text-[1rem] text-[.8rem] opacity-70 text-[#eee]">
                         <i class="text-[#2cdbaf] mr-[2%] fa-solid fa-check" />
                         {feature}
                     </li>
@@ -47,6 +47,19 @@ const { title, image, features } = Astro.props as Properties;
         border-radius: 5px;
         overflow: hidden;
         transition: 0.2s;
+    }
+
+    @media (max-width: 768px) {
+        .container .card {
+            width: 70vw;
+            height: 65vh;
+        }
+    }
+
+    @media (min-width: 1536px) {
+        .container .card {
+                    
+        }
     }
 
     .container .card:hover {
@@ -90,4 +103,3 @@ const { title, image, features } = Astro.props as Properties;
         background-color: #002e28;
     }
 </style>
-

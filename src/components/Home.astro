@@ -12,24 +12,24 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
 >
     <div class="flex justify-center flex-col">
         <p
-            class="flex justify-between place-items-center gap-3 text-[#ccc] mx-auto py-[9px] px-8 text-[.9rem] text-border mb-[2%] bg-[#222] transition duration-150 rounded-full w-fit"
+            class="lg:mb-[5%] 2xl:text-[1.1rem] flex justify-between place-items-center gap-3 text-[#ccc] mx-auto py-[9px] px-8 text-[.9rem] text-border mb-[2%] bg-[#222] transition duration-150 rounded-full w-fit"
         >
             {paragraph}
             <span class="w-[10px] h-[10px] block rounded-full bg-primary"
             ></span>
         </p>
 
-        <h1 class="text-[#eee] mb-[2%] text-center font-semibold text-[3.5rem]">
+        <h1 class="lg:mb-[5%] lg:text-[2.3rem] text-balance text-[#eee] 2xl:text-[5rem] mb-[2%] text-center font-semibold text-[3.5rem]">      
             {first_text}<br />
             <span class="text-primary">{second_text}</span>
         </h1>
         <p
-            class="text-pretty text-[#eee] text-center w-1/2 leading-[1.5] mx-auto text-[1rem]"
+            class="lg:mb-[3%] lg:w-[80%] text-pretty text-[#eee] 2xl:text-[1.2rem] text-center w-1/2 leading-[1.5] mx-auto text-[1rem]"
         >
             {second_paragraph}
         </p>
         <button
-            class="w-fit place-items-center hover:gap-x-5 mx-auto flex gap-x-2 button-default py-[2vh] px-[2vw] text-[.8rem] mt-[2%]"
+            class="lg:py-[1.5vh] 2xl:text-[1rem] 2xl:py-[1.5vh] w-fit place-items-center hover:gap-x-5 mx-auto flex gap-x-2 button-default py-[2vh] px-[2vw] text-[.8rem] mt-[2%]"
             ><span>{button_text}</span><i
                 class="text-[.8rem] fa-solid fa-arrow-right"></i></button
         >
@@ -52,7 +52,7 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
             opacity: 1;
         }
     }
-	.home {
+    .home {
         animation: opacity-home 1s ease-in;
     }
     .main div {
@@ -63,8 +63,22 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
     .text-border {
         border: solid 1px #252525;
     }
+    @keyframes swapShadow {
+        0% {
+            box-shadow: 0px 0px 10px #08c199;
+            background-color: #08c199;
+        }
+        50% {
+            box-shadow: 0px 0px 12px #68edc7;
+            background-color: #68edc7;
+        }
+        100% {
+            box-shadow: 0px 0px 10px #08c199;
+            background-color: #08c199
+        }
+    }
     .text-border span {
-        box-shadow: 0px 0px 10px #08c199;
+        animation: swapShadow 4s infinite;
     }
     .main::before {
         content: "";

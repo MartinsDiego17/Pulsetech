@@ -62,6 +62,17 @@ const { navbar } = getContents(currentLocale);
 		text-align: left;
 		color: white;
 	}
+	@media (max-width: 768px) {
+		.title-section {
+			font-size: 1.5rem;
+			text-align: center;
+		}
+	}
+	@media (min-width: 1536px) {
+		.title-section {
+			font-size: 2.3rem;
+		}
+	}
 	body::-webkit-scrollbar {
 		width: 5px;
 	}
@@ -73,5 +84,11 @@ const { navbar } = getContents(currentLocale);
 	}
 	body::-webkit-scrollbar-thumb:hover {
 		background-color: #ccc;
+	}
+	#switcher span{
+		background-color: white;
+	}
+	#switcher span:nth-child(2) {
+		background-color: #08c199;
 	}
 </style>
