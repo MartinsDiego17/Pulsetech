@@ -7,16 +7,9 @@ import Works from "./Works.astro";
 import Professionals from "./Professionals.astro";
 import Contacto from "./Contacto.astro";
 import Footer from "./Footer.astro";
-import { contents } from "../config-i18n/config-i18n.ts";
+import { getContents } from "../config-i18n/config-i18n.ts";
 
-const { layout, home, type_pages, benefits, professionals, go_work, footer } = contents;
-interface AstroInterface {
-  currentLocale: any;
-}
-
-import { getI18N } from "../lenguajes";
-const { currentLocale }: AstroInterface = Astro;
-const i18n = getI18N({ currentLocale });
+const { layout, home, type_pages, benefits, professionals, go_work, footer } = getContents(Astro.currentLocale);
 ---
 
 <Layout title={layout.title}>

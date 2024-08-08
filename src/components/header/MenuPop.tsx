@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Popover, PopoverTrigger, PopoverContent, Switch } from "@nextui-org/react";
+import { navigate } from "astro/virtual-modules/transitions-router.js";
 
 interface MenuPopProps {
   content: {
@@ -13,19 +14,29 @@ interface MenuPopProps {
 
 const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
 
-  const handleLanguage = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
+  const [disabled, setDisabled] = useState({
+    es: true,
+    en: false
+  })
+
+  useEffect(() => {
     const currentPath = window.location.pathname;
-    const currentHash = window.location.hash;
-    const currentLocale = currentPath.startsWith('/en') ? 'en' : 'es';
-    const newLocale = currentLocale === 'en' ? 'es' : 'en';
-    const newPath = currentLocale === 'en'
-      ? currentPath.replace('/en', '')
-      : `/en${currentPath}`;
-      
-    let updatedPath = newPath === '' ? '/' : newPath;
-    
-    window.location.href = updatedPath + currentHash;
+    const currentLocale = currentPath.startsWith('/en') ? 'en' : '/';
+    if (currentLocale === "/") setDisabled({
+      es: true,
+      en: false
+    })
+    else if (currentLocale === "en") {
+      setDisabled({
+        es: false,
+        en: true
+      })
+    }
+  }, []);
+
+  const handleLanguage = (event: (React.MouseEvent<HTMLButtonElement> | undefined | any), language: string) => {
+    navigate(language);
+    return;
   };
 
   return (
@@ -48,14 +59,16 @@ const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
               {content.language} <i className="pl-[.5vw] text-primary fa-solid fa-earth-americas"></i>
             </p>
             <button
-              onClick={handleLanguage}
-              className="w-[19vw] text-left mx-[.5vw] text-[.65rem] hover:bg-[#222] cursor-pointer p-[.5vw] rounded-md"
+              onClick={() => handleLanguage(event, "/")}
+              disabled={disabled.es}
+              className="disabled:opacity-50 disabled:cursor-default disabled:hover:bg-transparent w-[19vw] text-left mx-[.5vw] text-[.65rem] hover:bg-[#222] cursor-pointer p-[.5vw] rounded-md"
             >
               {content.spanish}
             </button> <br />
             <button
-              onClick={handleLanguage}
-              className="w-[19vw] text-left mx-[.5vw] text-[.65rem] hover:bg-[#222] cursor-pointer p-[.5vw] rounded-md"
+              onClick={() => handleLanguage(event, "en")}
+              disabled={disabled.en}
+              className="disabled:opacity-50 disabled:cursor-default disabled:hover:bg-transparent w-[19vw] text-left mx-[.5vw] text-[.65rem] hover:bg-[#222] cursor-pointer p-[.5vw] rounded-md"
             >
               {content.english}
             </button>

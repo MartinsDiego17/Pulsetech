@@ -1,3 +1,5 @@
+import { getI18N } from "../lenguajes";
+
 interface LayoutConfig {
     title: string;
 }
@@ -76,26 +78,26 @@ interface FooterConfig {
     }
 }
 
-import { getI18N } from "../lenguajes";
-const i18n = getI18N({ currentLocale: "es" });
+export const getContents = (current: any) => {
+    const i18n = getI18N({ currentLocale: current });
 
-const layout: LayoutConfig = i18n.layout;
-const navbar: NavbarConfig = i18n.nav_bar;
-const home: HomeConfig = i18n.home;
-const type_pages: TypepagesConfig = i18n.type_pages;
-const benefits: BenefitsConfig = i18n.benefits;
-const professionals: ProfessionalsConfig = i18n.professionals;
-const go_work: GoworkConfig = i18n.go_work;
-const footer: FooterConfig = i18n.footer;
+    const layout: LayoutConfig = i18n.layout;
+    const navbar: NavbarConfig = i18n.nav_bar;
+    const home: HomeConfig = i18n.home;
+    const type_pages: TypepagesConfig = i18n.type_pages;
+    const benefits: BenefitsConfig = i18n.benefits;
+    const professionals: ProfessionalsConfig = i18n.professionals;
+    const go_work: GoworkConfig = i18n.go_work;
+    const footer: FooterConfig = i18n.footer;
 
-
-export const contents = {
-    layout,
-    navbar,
-    home,
-    type_pages,
-    benefits,
-    professionals,
-    go_work,
-    footer
-}
+    return {
+        layout,
+        navbar,
+        home,
+        type_pages,
+        benefits,
+        professionals,
+        go_work,
+        footer
+    }
+};
