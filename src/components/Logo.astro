@@ -1,18 +1,10 @@
 ---
-const { size } = Astro.props;
-let remsClass = "";
-
-if(size === "small") {
-    remsClass = "text-[1.2rem]"
-} 
-else if(size === "big") {
-    remsClass = "text-[4.5rem]"
-}
+import LogoIcon from "./svg/logo";
 ---
 
-<div id="logo" class={`w-fit h-fit p-0 m-0 ${remsClass}`}>
-    <h1 class="text-[white] font-semibold">
-        PULSE<span class="text-primary">TECH</span>
+<div id="logo" class={`3xl:text-[1.5rem] 4xl:text-[2rem] w-fit h-fit p-0 m-0 text-[1.2rem]`}>
+    <h1 class="text-[white] font-semibold cursor-pointer flex place-items-center">
+        PULSE<span class="text-primary mr-[2%]">TECH</span> <LogoIcon height="25" width="25" color="#08c199"/>
     </h1>
 </div>
 

@@ -6,9 +6,10 @@ const { title } = Astro.props;
 import "@fontsource-variable/inter";
 import Navbar from "../components/Navbar.astro";
 import { getI18N } from "../lenguajes";
+import { getContents } from "../config-i18n/config-i18n";
+
 const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
-const navbar = i18n.nav_bar;
+const { navbar } = getContents(currentLocale);
 ---
 
 <!doctype html>
