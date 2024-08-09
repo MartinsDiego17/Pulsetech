@@ -1,6 +1,5 @@
 ---
 import "@fortawesome/fontawesome-free/css/all.css";
-import { Button, Calendar } from "@nextui-org/react";
 const { content } = Astro.props;
 const { paragraph, first_text, second_text, second_paragraph, button_text } =
     content;
@@ -38,36 +37,6 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
     </div>
 </main>
 
-<Calendar />
-
-<!-- <div class="text-container">Bubbles</div>
-<div class="gradient-bg">
-    <svg xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <filter id="goo">
-                <feGaussianBlur
-                    in="SourceGraphic"
-                    stdDeviation="10"
-                    result="blur"></feGaussianBlur>
-                <feColorMatrix
-                    in="blur"
-                    mode="matrix"
-                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-                    result="goo"></feColorMatrix>
-                <feBlend in="SourceGraphic" in2="goo"></feBlend>
-            </filter>
-        </defs>
-    </svg>
-    <div class="gradients-container">
-        <div class="g1"></div>
-        <div class="g2"></div>
-        <div class="g3"></div>
-        <div class="g4"></div>
-        <div class="g5"></div>
-        <div class="interactive"></div>
-    </div>
-</div>
- -->
 <style is:global>
     .main {
         /* background-image: url(../../images/body/bg3.jpg); */
@@ -123,5 +92,3 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
         right: 0;
     }
 </style>
-
-<script src="../scripts/main.ts"></script>
