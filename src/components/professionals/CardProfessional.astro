@@ -10,13 +10,15 @@ const { image, name, lastname, linkedin, github, description } = Astro.props;
         class="h-[23vh] lg:h-[10vh] lg:w-[10vh] rounded-full w-[23vh] mx-auto"
     />
     <h2
-        class="text-[#ccc] uppercase font-bold text-center text-[.9rem] mt-[6vh]"
+        class="2xl:text-[1.1rem] text-[#ccc] uppercase font-bold text-center text-[.9rem] mt-[6vh]"
     >
         {name}
         <br />
         {lastname}
     </h2>
-    <p class="text-[.9rem] text-[#08c199] text-tiny text-center">
+    <p
+        class="2xl:text-[.95rem] text-[.9rem] text-[#08c199] text-tiny text-center"
+    >
         {description}
     </p>
     <div
@@ -25,13 +27,16 @@ const { image, name, lastname, linkedin, github, description } = Astro.props;
         <a href={linkedin} target="_blank">
             <button
                 class="bg-[#0087cb] rounded-[8px] lg:w-[4vh] lg:h-[4vh] w-[2.8vw] h-[2.8vw]"
-                ><i class="text-white fa-brands fa-linkedin-in"></i></button
+                ><i
+                    class="2xl:text-[1.2rem] text-white fa-brands fa-linkedin-in"
+                ></i></button
             >
         </a>
         <a href={github} target="_blank">
             <button
                 class="bg-[#181717] rounded-[8px] lg:w-[4vh] lg:h-[4vh] w-[2.8vw] h-[2.8vw]"
-                ><i class="text-white fa-brands fa-github"></i></button
+                ><i class="2xl:text-[1.2rem] text-white fa-brands fa-github"
+                ></i></button
             >
         </a>
     </div>

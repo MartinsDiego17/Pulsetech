@@ -8,13 +8,21 @@ const { categories, contact, follow } = content;
     class="lg:flex-col border-t-1 border-[#252525] flex justify-between w-screen px-[15vw] py-[7vh] h-fit bg-[#161616] text-[#eee]"
 >
     <article class="lg:mb-[3vh]">
-        <h3 class="lg:text-center text-white font-bold text-[1rem]">{categories.title}</h3>
+        <h3 class="lg:text-center text-white font-bold text-[1rem]">
+            {categories.title}
+        </h3>
         <ul>
-            {categories.sections.map((sec: string) => <li class="lg:text-center">{sec}</li>)}
+            {
+                categories.sections.map((sec: string) => (
+                    <li class="lg:text-center">{sec}</li>
+                ))
+            }
         </ul>
     </article>
     <article class="center lg:mb-[3vh]">
-        <h3 class="text-center text-white font-bold text-[1rem]">{contact.title}</h3>
+        <h3 class="text-center text-white font-bold text-[1rem]">
+            {contact.title}
+        </h3>
         <ul>
             <li class="lg:text-center">
                 <i class="fa-brands fa-whatsapp pr-[.5vw]"></i>+54 9 3417506932
@@ -29,10 +37,12 @@ const { categories, contact, follow } = content;
         </ul>
     </article>
     <article class="last">
-        <h3 class="lg:text-center text-white font-bold text-[1rem] text-right">{follow.title}</h3>
+        <h3 class="lg:text-center text-white font-bold text-[1rem] text-right">
+            {follow.title}
+        </h3>
         <a
             href="#"
-            class="lg:mx-auto ml-auto lg:w-[5vh] lg:h-[5vh] bg-[#009d7e] hover:bg-[#68edc7] hover:text-black w-[3vw] cursor-pointer transition duration-200 flex justify-center rounded-full place-items-center h-[3vw]"
+            class="2xl:text-[1.2rem] lg:mx-auto ml-auto lg:w-[5vh] lg:h-[5vh] bg-[#009d7e] hover:bg-[#68edc7] hover:text-black w-[3vw] cursor-pointer transition duration-200 flex justify-center rounded-full place-items-center h-[3vw]"
         >
             <i class="fa-brands fa-instagram"></i>
         </a>
@@ -51,9 +61,17 @@ const { categories, contact, follow } = content;
     .last li {
         text-align: right;
     }
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
         .last li {
             text-align: center;
+        }
+    }
+    @media (min-width: 1536px) {
+        h3 {
+            font-size: 1.3rem;
+        }
+        li {
+            font-size: 1rem;
         }
     }
 </style>
