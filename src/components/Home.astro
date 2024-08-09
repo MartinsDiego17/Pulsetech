@@ -19,7 +19,9 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
             ></span>
         </p>
 
-        <h1 class="lg:mb-[5%] lg:text-[2.3rem] text-balance text-[#eee] 2xl:text-[5rem] mb-[2%] text-center font-semibold text-[3.5rem]">      
+        <h1
+            class="lg:mb-[5%] lg:text-[2.3rem] text-balance text-[#eee] 2xl:text-[5rem] mb-[2%] text-center font-semibold text-[3.5rem]"
+        >
             {first_text}<br />
             <span class="text-primary">{second_text}</span>
         </h1>
@@ -36,6 +38,34 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
     </div>
 </main>
 
+<!-- <div class="text-container">Bubbles</div>
+<div class="gradient-bg">
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur
+                    in="SourceGraphic"
+                    stdDeviation="10"
+                    result="blur"></feGaussianBlur>
+                <feColorMatrix
+                    in="blur"
+                    mode="matrix"
+                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                    result="goo"></feColorMatrix>
+                <feBlend in="SourceGraphic" in2="goo"></feBlend>
+            </filter>
+        </defs>
+    </svg>
+    <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+    </div>
+</div>
+ -->
 <style is:global>
     .main {
         /* background-image: url(../../images/body/bg3.jpg); */
@@ -74,7 +104,7 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
         }
         100% {
             box-shadow: 0px 0px 10px #08c199;
-            background-color: #08c199
+            background-color: #08c199;
         }
     }
     .text-border span {
@@ -91,3 +121,5 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
         right: 0;
     }
 </style>
+
+<script src="../scripts/main.ts"></script>
