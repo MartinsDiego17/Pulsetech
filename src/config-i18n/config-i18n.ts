@@ -13,7 +13,7 @@ interface NavbarConfig {
         english: string
         theme: string
     }
-}
+}   
 
 interface HomeConfig {
     paragraph: string;

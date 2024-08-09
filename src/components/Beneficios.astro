@@ -10,7 +10,7 @@ const { title, first_benefit, second_benefit, third_benefit } = content;
 >
     <h1 class="title-section w-3/5 mx-auto font-bold mb-[5%]">{title}</h1>
 
-    <section class="w-[60%] mx-auto grid grid-cols-2 gap-2">
+    <section class="lg:w-4/5 w-[60%] lg:grid-cols-1 mx-auto grid grid-cols-2 gap-2">
         <CardBeneficio
             className="1"
             iconClass="fa-solid fa-arrow-trend-up"
@@ -33,8 +33,21 @@ const { title, first_benefit, second_benefit, third_benefit } = content;
 </article>
 
 <style is:global>
+        .cardContainer {
+        padding: 2vw;
+        transition: 0.2s;
+        background-color: #191919;
+    }
     .beneficios {
         background-color: transparent;
+    }
+    @media (max-width: 768px) {
+        .item1, .item2, .item3 {
+            grid-column: span 1 !important;
+        }
+        .cardContainer {
+            padding: 2vh;
+        }
     }
     .item1 {
         grid-column: span 2;
@@ -43,9 +56,5 @@ const { title, first_benefit, second_benefit, third_benefit } = content;
     .item3 {
         grid-column: span 1;
     }
-    .cardContainer {
-        padding: 2vw;
-        transition: 0.2s;
-        background-color: #191919;
-    }
+
 </style>

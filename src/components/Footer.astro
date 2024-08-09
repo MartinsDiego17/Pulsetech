@@ -5,34 +5,34 @@ const { categories, contact, follow } = content;
 
 <div
     id="footer"
-    class="border-t-1 border-[#252525] flex justify-between w-screen px-[15vw] py-[7vh] h-fit bg-[#161616] text-[#eee]"
+    class="lg:flex-col border-t-1 border-[#252525] flex justify-between w-screen px-[15vw] py-[7vh] h-fit bg-[#161616] text-[#eee]"
 >
-    <article>
-        <h3 class="text-white font-bold text-[1rem]">{categories.title}</h3>
+    <article class="lg:mb-[3vh]">
+        <h3 class="lg:text-center text-white font-bold text-[1rem]">{categories.title}</h3>
         <ul>
-            {categories.sections.map((sec: string) => <li>{sec}</li>)}
+            {categories.sections.map((sec: string) => <li class="lg:text-center">{sec}</li>)}
         </ul>
     </article>
-    <article class="center">
+    <article class="center lg:mb-[3vh]">
         <h3 class="text-center text-white font-bold text-[1rem]">{contact.title}</h3>
         <ul>
-            <li>
+            <li class="lg:text-center">
                 <i class="fa-brands fa-whatsapp pr-[.5vw]"></i>+54 9 3417506932
             </li>
-            <li>
+            <li class="lg:text-center">
                 <i class="fa-brands fa-instagram pr-[.5vw]"></i>pulsetech.dev
             </li>
-            <li>
+            <li class="lg:text-center">
                 <i class="fa-regular fa-envelope pr-[.5vw]"
                 ></i>pulsetech@hotmail.com
             </li>
         </ul>
     </article>
     <article class="last">
-        <h3 class="text-white font-bold text-[1rem] text-right">{follow.title}</h3>
+        <h3 class="lg:text-center text-white font-bold text-[1rem] text-right">{follow.title}</h3>
         <a
             href="#"
-            class="ml-auto bg-[#009d7e] hover:bg-[#68edc7] hover:text-black w-[3vw] cursor-pointer transition duration-200 flex justify-center rounded-full place-items-center h-[3vw]"
+            class="lg:mx-auto ml-auto lg:w-[5vh] lg:h-[5vh] bg-[#009d7e] hover:bg-[#68edc7] hover:text-black w-[3vw] cursor-pointer transition duration-200 flex justify-center rounded-full place-items-center h-[3vw]"
         >
             <i class="fa-brands fa-instagram"></i>
         </a>
@@ -50,5 +50,10 @@ const { categories, contact, follow } = content;
     }
     .last li {
         text-align: right;
+    }
+    @media(max-width: 768px) {
+        .last li {
+            text-align: center;
+        }
     }
 </style>

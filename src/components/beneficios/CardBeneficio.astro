@@ -3,17 +3,17 @@ const { className, image, iconClass, title, paragraph } = Astro.props;
 ---
 
 <div
-    class={`cardContainer w-full h-[30vh] text-white rounded-[10px] item${className} ${className > 1 && "h-[45vh]"}`}
+    class={`cardContainer lg:mb-[5%] w-full h-[30vh] lg:h-fit text-white rounded-[10px] item${className} ${className > 1 && "h-[45vh]"}`}
 >
     <h2>
         <span
-            class="h-[38px] w-[38px] inline-flex justify-center place-items-center rounded-[8px] bg-[#232323] text-[#aaa] border border-[#2c2c2c] "
+            class="lg:h-[30px] lg:w-[30px] h-[38px] w-[38px] inline-flex justify-center place-items-center rounded-[8px] bg-[#232323] text-[#aaa] border border-[#2c2c2c] "
         >
             <i class={`text-primary ${iconClass}`}></i>
         </span>
-        <span class="font-bold text-[1.2rem] text-[#ccc] pl-[1vw]">{title}</span>
+        <span class="font-bold text-[1.2rem] lg:pl-[1.5vh] text-[#ccc] pl-[1vw] lg:text-[.9rem]">{title}</span>
     </h2>
-    <p class="text-[#888] text-[.9rem] mt-[1vw]">{paragraph}</p>
+    <p class="lg:w-[95%] text-balance text-[#888] text-[.9rem] mt-[1vw]">{paragraph}</p>
 </div>
 
 <style>

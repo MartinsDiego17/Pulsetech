@@ -7,28 +7,32 @@ import diego from "../../images/professionals/diego.png";
 const professionals = [
     {
         image: chris.src,
-        name: "Christian Natale",
+        name: "Christian",
+        lastname: "Natale",
         linkedin: "https://www.linkedin.com/in/christian-natale-/",
         github: "https://github.com/Chrisnatalx",
         description: "Full stack developer",
     },
     {
         image: jona.src,
-        name: "Gabriel Juarez",
+        name: "Gabriel",
+        lastname: "Juárez",
         linkedin: "https://www.linkedin.com/in/gabriel-juarez-720998240/",
         github: "https://github.com/zuoki",
         description: "Full stack developer",
     },
     {
         image: dami.src,
-        name: "Damián diaz",
+        name: "Damián",
+        lastname: "Diaz",
         linkedin: "https://www.linkedin.com/in/damian-diaz-6a7537258/",
         github: "https://github.com/Diaz027",
         description: "Full stack developer",
     },
     {
         image: diego.src,
-        name: "Diego Martins",
+        name: "Diego",
+        lastname: "Martins",
         linkedin: "https://www.linkedin.com/in/diego-martins-563954278/",
         github: "https://github.com/MartinsDiego17/",
         description: "Full stack developer",
@@ -41,12 +45,13 @@ const { title } = content;
 
 <div id="professionals" class="lazy-section mb-[40vh]">
     <h2 class="title-section mb-[5vh] font-bold w-4/5 mx-auto text-left">{title}</h2>
-    <section class="w-4/5 mx-auto grid grid-cols-4 gap-16">
+    <section class="lg:gap-3 lg:grid-cols-2 w-4/5 mx-auto grid grid-cols-4 gap-16">
         {
             professionals.map((pro) => (
                 <CardProfessional
                     image={pro.image}
                     name={pro.name}
+                    lastname={pro.lastname}
                     linkedin={pro.linkedin}
                     github={pro.github}
                     description={pro.description}
