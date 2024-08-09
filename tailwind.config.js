@@ -12,6 +12,10 @@ export default {
         'lg': {'max': '768px'},
         'xm': {'max': '1280px'},
       },
+      colors: {
+        "transparent-black": "rgb(0 0 0 / 50%)",
+        "transparent-bg": "rgba(34, 34, 34, 0.5)",
+      }
     },
   },
   darkMode: "class",

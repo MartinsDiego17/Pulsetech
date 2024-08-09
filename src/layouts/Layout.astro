@@ -1,31 +1,32 @@
 ---
 interface Props {
-  title: string;
+	title: string;
 }
 const { title } = Astro.props;
 import "@fontsource-variable/inter";
 import Navbar from "../components/Navbar.astro";
 import { getI18N } from "../lenguajes";
 import { getContents } from "../config-i18n/config-i18n";
-
+import { ViewTransitions } from "astro:transitions";
 const { currentLocale } = Astro;
 const { navbar } = getContents(currentLocale);
 ---
 
 <!doctype html>
 <html lang={currentLocale}>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon2.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <slot />
-    <Navbar content={navbar} />
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon2.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body>
+		<slot />
+		<Navbar content={navbar} />
+	</body>
 </html>
 
 <style is:global>
@@ -66,7 +67,7 @@ const { navbar } = getContents(currentLocale);
 		.title-section {
 			font-size: 1.5rem;
 			text-align: center;
-			width: 100%; 
+			width: 100%;
 			text-wrap: pretty;
 		}
 	}
@@ -87,7 +88,7 @@ const { navbar } = getContents(currentLocale);
 	body::-webkit-scrollbar-thumb:hover {
 		background-color: #ccc;
 	}
-	#switcher span{
+	#switcher span {
 		background-color: white;
 	}
 	#switcher span:nth-child(2) {
