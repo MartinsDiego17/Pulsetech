@@ -78,6 +78,14 @@ interface FooterConfig {
     }
 }
 
+interface MeetConfig {
+    title: string
+    text: string
+    confirm_button: string
+    back_button: string
+    message_button: string
+}
+
 export const getContents = (current: any) => {
     const i18n = getI18N({ currentLocale: current });
 
@@ -89,6 +97,7 @@ export const getContents = (current: any) => {
     const professionals: ProfessionalsConfig = i18n.professionals;
     const go_work: GoworkConfig = i18n.go_work;
     const footer: FooterConfig = i18n.footer;
+    const meet: MeetConfig = i18n.meet;
 
     return {
         layout,
@@ -98,6 +107,7 @@ export const getContents = (current: any) => {
         benefits,
         professionals,
         go_work,
-        footer
+        footer,
+        meet
     }
 };

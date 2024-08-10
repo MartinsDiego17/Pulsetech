@@ -13,8 +13,8 @@
         ],
         "popover_elements": {
             "meet": "Schedule a Meeting",
-            "language" : "Language",
-            "spanish" : "Spanish",
+            "language": "Language",
+            "spanish": "Spanish",
             "english": "English",
             "theme": "Dark Theme"
         }
@@ -119,5 +119,12 @@
         "follow": {
             "title": "Follow Us on Instagram"
         }
+    },
+    "meet": {
+        "title": "Schedule a meeting",
+        "text": "Let's quote your application",
+        "confirm_button": "Confirm",
+        "back_button": "Cancel and go back",
+        "message_button": "Send direct message"
     }
 }

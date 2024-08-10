@@ -35,6 +35,10 @@ const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
   }, []);
 
   const handleLanguage = (event: (React.MouseEvent<HTMLButtonElement> | undefined | any), language: string) => {
+    if (window.location.pathname === "/meet" && language === "en") {
+      navigate("/en/meet")
+      return;
+    }
     navigate(language);
     return;
   };

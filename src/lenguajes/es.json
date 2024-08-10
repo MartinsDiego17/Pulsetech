@@ -119,5 +119,12 @@
         "follow": {
             "title" : "Síguenos en Instagram"
         }
+    },
+    "meet" : {
+        "title" : "Coordina una reunión",
+        "text" : "Coticemos tu aplicación",
+        "confirm_button" : "Confirmar",
+        "back_button" : "Cancelar y volver",
+        "message_button" : "Enviar mensaje directo"
     }
 }
