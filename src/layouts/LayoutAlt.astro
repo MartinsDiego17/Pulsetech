@@ -1,0 +1,96 @@
+---
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+import "@fontsource-variable/inter";
+import { getContents } from "../config-i18n/config-i18n";
+import { ViewTransitions } from "astro:transitions";
+import NavbarAlt from "../components/NavbarAlt.astro";
+const { currentLocale } = Astro;
+const { navbar } = getContents(currentLocale);
+---
+
+<!doctype html>
+<html lang={currentLocale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon2.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body>
+		<slot />
+		<NavbarAlt content={navbar} />
+	</body>
+</html>
+
+<style is:global>
+	body {
+		min-height: 100vh;
+		min-width: 100vw;
+		padding: 0;
+		margin: 0;
+		height: fit-content;
+		overflow-x: hidden;
+		font-family: "Inter variable";
+		background-color: black;
+	}
+	.text-primary {
+		color: #08c199;
+	}
+	.bg-primary {
+		background-color: #08c199;
+	}
+	.button-default {
+		background-color: transparent;
+		border: solid 1px #08c199;
+		border-radius: 5px;
+		transition: 0.2s;
+		color: #08c199;
+	}
+	.button-default:hover {
+		background-color: #08c199;
+		filter: brightness(110%);
+		color: black;
+	}
+	.title-section {
+		font-size: 2rem;
+		text-align: left;
+		color: white;
+	}
+	@media (max-width: 768px) {
+		.title-section {
+			font-size: 1.5rem;
+			text-align: center;
+			width: 100%;
+			text-wrap: pretty;
+		}
+	}
+	@media (min-width: 1536px) {
+		.title-section {
+			font-size: 2.3rem;
+		}
+	}
+	body::-webkit-scrollbar {
+		width: 5px;
+	}
+	body::-webkit-scrollbar-track {
+		background-color: black;
+	}
+	body::-webkit-scrollbar-thumb {
+		background-color: #333;
+	}
+	body::-webkit-scrollbar-thumb:hover {
+		background-color: #ccc;
+	}
+	#switcher span {
+		background-color: white;
+	}
+	#switcher span:nth-child(2) {
+		background-color: #08c199;
+	}
+</style>

@@ -1,0 +1,43 @@
+---
+import Logo from "./Logo.astro";
+import MenuPop from "./header/MenuPop";
+const { content } = Astro.props;
+const { elements, popover_elements } = content;
+---
+
+<nav
+    id="nav-bar"
+    class="z-50 flex justify-between px-[7vw] py-[3vh] place-items-center fixed top-0 w-screen h-fit"
+>
+    <Logo />
+    <ul class="flex gap-x-10 place-items-center">
+            <MenuPop client:visible content={popover_elements} />
+    </ul>
+</nav>
+
+<style>
+    h1 {
+        font-size: 2rem;
+    }
+
+    @keyframes blurnav {
+        20% {
+            border-color: #222;
+        }
+        100% {
+            background: rgba(0, 0, 0, 0.5);
+            -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(30px);
+            border-color: #222;
+            transition: 0.3s;
+        }
+    }
+
+    nav {
+        animation: blurnav linear both;
+        animation-timeline: scroll();
+        animation-range: 0 500px;
+        border-bottom: solid 1px transparent;
+        transition: 0.2s;
+    }
+</style>
