@@ -1,8 +1,44 @@
 ---
-import Meet from "../../components/meet/Meet.astro";
+import Meet from "../../components/meet/Meet";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Pulsetech - meet">
     <Meet client:visible />
 </Layout>
+
+<style is:global>
+    .right-meet {
+      rotate: -180deg;
+      position: relative;
+    }
+    
+    .right-meet::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to left, rgba(0,0,0,0.5),black);
+      z-index: 1; 
+    }
+    .right-meet img {
+      position: relative;
+      z-index: 0;
+    }
+    
+    @keyframes opacity {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .main-meet {
+      animation: opacity 1s linear both;
+    }
+    </style>
+    
