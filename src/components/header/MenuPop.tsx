@@ -50,9 +50,11 @@ const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
       </PopoverTrigger>
       <PopoverContent className="lg:leading-[2.5] border border-[#222] lg:w-[70vw] lg:px-[10px] px-0 w-[20vw] flex dark">
         <div className="text-[#ccc] py-[.5vw] w-full flex flex-col">
-          <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
-            {content.meet}
-          </p>
+          <a href="/meet">
+            <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
+              {content.meet}
+            </p>
+          </a>
 
           <div>
             <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] p-[.5vw] my-[.4vw] mb-[0] rounded-md">
