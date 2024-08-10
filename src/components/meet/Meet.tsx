@@ -1,7 +1,8 @@
 
-import { DatePicker, Button } from "@nextui-org/react";
+import { DatePicker, Button, Select, SelectItem } from "@nextui-org/react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import background from "../../../public/images/body/bg2.jpg";
+import { useState } from "react";
 
 interface MeetConfig {
     title: string
@@ -11,9 +12,35 @@ interface MeetConfig {
     message_button: string
 }
 
+const hours: string[] = [
+    "9:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "13:00",
+    "14:00",
+    "15:00",
+    "16:00",
+    "17:00",
+    "18:00",
+    "19:00",
+]
+
 const Meet = ({ content }: { content: MeetConfig }) => {
 
     const { title, text, confirm_button, back_button, message_button } = content;
+    const [dataMeet, setDataMeet] = useState({
+        date: "", 
+        hour: "",
+        phone_number: "",
+        description: "",
+        userName: "",
+        isActive: true
+    })
+
+    const handleDate = (e: any) => {
+        console.log(e.target); 
+    };
 
     return (
         <article className="lg:max-h-[100vh] main-meet w-screen h-screen pt-[5vh] flex flex-col justify-center place-items-center">
@@ -24,7 +51,16 @@ const Meet = ({ content }: { content: MeetConfig }) => {
                     <p className="leading-none mt-[2%] lg:mt-0 text-[.9rem] text-[#ccc] text-center">
                         {text}
                     </p>
-                    <DatePicker className="lg:mt-[7vw] w-3/5 mt-[2vw]" />
+                    <div className="w-3/5 flex justify-between mx-auto">
+                        <DatePicker onChange={() => handleDate(event)} className="lg:mt-[7vw] w-[65%] mt-[2vw]" />
+                        <Select className="max-w-[30%]" placeholder="Horario">
+                            {
+                                hours?.map(hour => (
+                                    <SelectItem key={hour}>{hour}</SelectItem>
+                                ))
+                            }
+                        </Select>
+                    </div>
                     <Button
                         className="lg:w-full lg:mt-[4vh] text-[#eee] hover:bg-[#08c199] hover:text-black hover:border-[transparent] transition duration-150 w-[60%] mx-auto bg-transparent rounded-[5px] mt-[2vw] border border-[#555]"
                     >{confirm_button}</Button
@@ -35,12 +71,13 @@ const Meet = ({ content }: { content: MeetConfig }) => {
                             {back_button}
                         </Button>
                     </a>
+
                     <Button
                         className="text-primary opacity-80 hover:opacity-100 transition duration-150 w-fit mx-auto bg-transparent rounded-[5px] text-tiny mt-auto"
                     >{message_button} <i className="fa-solid fa-arrow-trend-up"></i></Button
                     >
                 </article>
-                
+
                 <article className="lg:hidden w-1/2 flex justify-end">
                     <div className="relative right-meet h-full w-full">
                         <img className="h-full w-[100%] object-cover" src={background.src} />
