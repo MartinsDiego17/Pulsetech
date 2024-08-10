@@ -3,6 +3,7 @@ import { DatePicker, Button, Select, SelectItem } from "@nextui-org/react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import background from "../../../public/images/body/bg2.jpg";
 import { useState } from "react";
+import ModalMeet from "./ModalMeet";
 
 interface MeetConfig {
     title: string
@@ -30,16 +31,43 @@ const Meet = ({ content }: { content: MeetConfig }) => {
 
     const { title, text, confirm_button, back_button, message_button } = content;
     const [dataMeet, setDataMeet] = useState({
-        date: "", 
+        date: "",
         hour: "",
+        userName: "",
         phone_number: "",
         description: "",
-        userName: "",
         isActive: true
     })
 
     const handleDate = (e: any) => {
-        console.log(e.target); 
+        const { day, month, year } = e;
+        const info_date = [day, month, year];
+        const select_date: string = info_date.join("/");
+        setDataMeet({
+            ...dataMeet,
+            date: select_date
+        })
+    };
+
+    const handleHour = (e: any) => {
+        setDataMeet({
+            ...dataMeet,
+            hour: e.target.value
+        })
+    }
+
+    const handleFields = (e: any) => {
+        const { name, value } = e.target;
+        setDataMeet({
+            ...dataMeet,
+            [name]: value
+        })
+    }
+
+    const validateDisabled = () => {
+        const { date, hour } = dataMeet;
+        if (!date.length || !hour.length) return true;
+        else return false;
     };
 
     return (
@@ -52,8 +80,15 @@ const Meet = ({ content }: { content: MeetConfig }) => {
                         {text}
                     </p>
                     <div className="w-3/5 flex justify-between mx-auto">
-                        <DatePicker onChange={() => handleDate(event)} className="lg:mt-[7vw] w-[65%] mt-[2vw]" />
-                        <Select className="max-w-[30%]" placeholder="Horario">
+                        <DatePicker
+                            onChange={handleDate}
+                            className="lg:mt-[7vw] w-[65%] mt-[2vw]"
+                        />
+                        <Select
+                            className="max-w-[30%]"
+                            placeholder="Horario"
+                            onChange={handleHour}
+                        >
                             {
                                 hours?.map(hour => (
                                     <SelectItem key={hour}>{hour}</SelectItem>
@@ -61,10 +96,12 @@ const Meet = ({ content }: { content: MeetConfig }) => {
                             }
                         </Select>
                     </div>
-                    <Button
-                        className="lg:w-full lg:mt-[4vh] text-[#eee] hover:bg-[#08c199] hover:text-black hover:border-[transparent] transition duration-150 w-[60%] mx-auto bg-transparent rounded-[5px] mt-[2vw] border border-[#555]"
-                    >{confirm_button}</Button
-                    >
+                    <ModalMeet
+                        confirm_button={confirm_button}
+                        handleFields={handleFields}
+                        dataMeet={dataMeet}
+                        disabled={validateDisabled()}
+                    />
                     <a href="/" className="w-[60%] lg:w-full mt-[1vw]">
                         <Button
                             className="lg:mt-[1.5vh] text-[#eee] hover:bg-[#08c199] hover:text-black hover:border-[transparent] transition duration-150 w-full mx-auto bg-transparent rounded-[5px]  border border-[#555]">
