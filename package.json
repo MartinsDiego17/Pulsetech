@@ -15,6 +15,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/inter": "^5.0.20",
     "@fortawesome/fontawesome-free": "^6.6.0",
+    "@internationalized/date": "^3.5.5",
     "@nextui-org/react": "^2.4.6",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
