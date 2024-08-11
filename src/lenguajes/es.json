@@ -125,6 +125,18 @@
         "text" : "Coticemos tu aplicación",
         "confirm_button" : "Confirmar",
         "back_button" : "Cancelar y volver",
-        "message_button" : "Enviar mensaje directo"
+        "message_button" : "Enviar mensaje directo",
+        "modal" : {
+            "title_modal" : "Ingresá tu información",
+            "placeholder_username" : "Nombre de empresa o usuario",
+            "placeholder_phone" : "Número telefónico",
+            "title_description" : "Descripción (opcional)",
+            "placeholder_description" : "Ingresa una breve descripción de tu proyecto",
+            "button_close" : "Cerrar",
+            "button_confirm": "Confirmar",
+            "title_success" : "Reunión coordinada con éxito",
+            "text_success" : "Durante las 24hs previas a la reunión te enviaremos un mensaje para que puedas confirmar tu asistencia a la misma.",
+            "button_home" : "Volver a la página principal"
+        }
     }
 }

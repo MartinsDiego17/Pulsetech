@@ -1,4 +1,4 @@
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, Textarea } from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, Textarea, button } from "@nextui-org/react";
 import { sendMeet } from "../../functions/meet/SendMeet";
 import { useState } from "react";
 import { navigate } from "astro:transitions/client";
@@ -19,6 +19,18 @@ interface Props {
     setSuccess: (arg: any) => void;
     failure: boolean
     setFailure: (arg: any) => void
+    content: {
+        title_modal: string
+        placeholder_username: string
+        placeholder_phone: string
+        title_description: string
+        placeholder_description: string
+        button_close: string
+        button_confirm: string
+        title_success: string
+        text_success: string
+        button_home: string
+    }
 }
 
 export default function App({
@@ -29,9 +41,22 @@ export default function App({
     success,
     setSuccess,
     failure,
-    setFailure
+    setFailure,
+    content
 }: Props) {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    const {
+        title_modal,
+        placeholder_username,
+        placeholder_phone,
+        title_description,
+        placeholder_description,
+        button_close,
+        button_confirm,
+        title_success,
+        text_success,
+        button_home
+    } = content;
 
     const handleSubmit = (close: any) => {
         const response = sendMeet(dataMeet);
@@ -60,7 +85,7 @@ export default function App({
                     {(onClose) => (
                         <>
                             <ModalHeader className="flex flex-col gap-1">
-                                {!success && "Ingresa tu información"}
+                                {!success && title_modal}
                             </ModalHeader>
                             <ModalBody>
                                 {!success ? (
@@ -70,46 +95,46 @@ export default function App({
                                             value={dataMeet.userName}
                                             onChange={handleFields}
                                             type="text"
-                                            label="Nombre de empresa o usuario"
+                                            label={placeholder_username}
                                         />
                                         <Input
                                             name="phone_number"
                                             value={dataMeet.phone_number}
                                             onChange={handleFields}
                                             type="text"
-                                            label="Número telefónico"
+                                            label={placeholder_phone}
                                         />
                                         <Textarea
                                             name="description"
                                             value={dataMeet.description}
                                             variant={"underlined"}
-                                            label="Descripción (opcional)"
+                                            label={title_description}
                                             onChange={handleFields}
                                             labelPlacement="outside"
-                                            placeholder="Ingresa una breve descripción de tu proyecto"
+                                            placeholder={placeholder_description}
                                             className="col-span-12 md:col-span-6 mb-6 md:mb-0 mt-[10%]"
                                         />
                                     </>
                                 ) : (
                                     <div className="flex flex-col justify-center">
-                                        <h1 className="text-center text-[1.5rem] text-[#045045] font-semibold">
-                                            <span>Reunión coordinada con éxito</span>
+                                        <h1 className="w-[70%] text-pretty mx-auto text-center text-[1.5rem] text-[#045045] font-semibold">
+                                            <span>{title_success}</span>
                                             <span> <i className="mr-[5%] text-[1.2rem] fa-solid fa-check" /></span>
                                         </h1>
-                                        <p className="mt-[1vw] text-center text-[.8rem] text-[#333]">
-                                            Durante las 24hs previas a la reunión te enviaremos un mensaje para que puedas confirmar tu asistencia a la misma.
+                                        <p className="text-balance mt-[1vw] text-center text-[.8rem] text-[#333]">
+                                            {text_success}
                                         </p>
                                     </div>
                                 )}
                             </ModalBody>
                             <ModalFooter className="justify-center">
                                 <Button className={`${success && "hidden"}`} color="danger" variant="light" onPress={onClose}>
-                                    Cerrar
+                                    {button_close}
                                 </Button>
                                 <Button className={`${success && "hidden"}`} isDisabled={localDisabled()} color="primary" onPress={() => handleSubmit(onClose)}>
-                                    Confirmar
+                                    {button_confirm}
                                 </Button>
-                                <Button onClick={navigateHome} className={`${!success && "hidden"} px-[2vw] rounded-full mt-[3vw] py-[1vw]`}>Volver a la página principal</Button>
+                                <Button onClick={navigateHome} className={`${!success && "hidden"} px-[2vw] rounded-full mt-[3vw] py-[1vw]`}>{button_home}</Button>
                             </ModalFooter>
                         </>
                     )}

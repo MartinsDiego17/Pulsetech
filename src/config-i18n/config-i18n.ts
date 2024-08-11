@@ -13,7 +13,7 @@ interface NavbarConfig {
         english: string
         theme: string
     }
-}   
+}
 
 interface HomeConfig {
     paragraph: string;
@@ -84,6 +84,18 @@ interface MeetConfig {
     confirm_button: string
     back_button: string
     message_button: string
+    modal: {
+        title_modal: string
+        placeholder_username: string
+        placeholder_phone: string
+        title_description: string
+        placeholder_description: string
+        button_close: string
+        button_confirm: string
+        title_success: string
+        text_success: string
+        button_home: string
+    }
 }
 
 export const getContents = (current: any) => {

@@ -121,10 +121,22 @@
         }
     },
     "meet": {
-        "title": "Schedule a meeting",
-        "text": "Let's quote your application",
+        "title": "Schedule a Meeting",
+        "text": "Let's discuss your application",
         "confirm_button": "Confirm",
         "back_button": "Cancel and go back",
-        "message_button": "Send direct message"
+        "message_button": "Send direct message",
+        "modal": {
+            "title_modal": "Enter your information",
+            "placeholder_username": "Company or username",
+            "placeholder_phone": "Phone number",
+            "title_description": "Description (optional)",
+            "placeholder_description": "Enter a brief description of your project",
+            "button_close": "Close",
+            "button_confirm": "Confirm",
+            "title_success": "Meeting successfully scheduled",
+            "text_success": "We will send you a message within 24 hours prior to the meeting to confirm your attendance.",
+            "button_home": "Return to the homepage"
+        }
     }
 }

@@ -13,7 +13,20 @@ interface MeetConfig {
     confirm_button: string
     back_button: string
     message_button: string
+    modal: {
+        title_modal: string
+        placeholder_username: string
+        placeholder_phone: string
+        title_description: string
+        placeholder_description: string
+        button_close: string
+        button_confirm: string
+        title_success: string
+        text_success: string
+        button_home: string
+    }
 }
+
 
 const hours: string[] = [
     "9:00",
@@ -31,7 +44,7 @@ const hours: string[] = [
 
 const Meet = ({ content }: { content: MeetConfig }) => {
 
-    const { title, text, confirm_button, back_button, message_button } = content;
+    const { title, text, confirm_button, back_button, message_button, modal } = content;
     const [dataMeet, setDataMeet] = useState({
         date: "",
         hour: "",
@@ -110,6 +123,7 @@ const Meet = ({ content }: { content: MeetConfig }) => {
                         setSuccess={setSuccess}
                         failure={failure}
                         setFailure={setFailure}
+                        content={modal}
                     />
                     <a href="/" className="w-[60%] lg:w-full mt-[1vw]">
                         <Button
