@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Popover, PopoverTrigger, PopoverContent, Switch } from "@nextui-org/react";
+import { Popover, PopoverTrigger, PopoverContent, Switch, Button } from "@nextui-org/react";
 import { navigate } from "astro/virtual-modules/transitions-router.js";
 
 interface MenuPopProps {
   content: {
+    login: string;
     meet: string;
     language: string;
     spanish: string;
     english: string;
     theme: string;
+    unLoggin: string;
   };
 }
 
@@ -39,6 +41,10 @@ const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
       navigate("/en/meet")
       return;
     }
+    else if (window.location.pathname === "/login" && language === "en") {
+      navigate("/en/login")
+      return;
+    }
     navigate(language);
     return;
   };
@@ -54,6 +60,13 @@ const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
       </PopoverTrigger>
       <PopoverContent className="lg:leading-[2.5] border border-[#222] lg:w-[70vw] lg:px-[10px] px-0 w-[20vw] flex dark">
         <div className="text-[#ccc] py-[.5vw] w-full flex flex-col">
+
+          <a href="/login">
+            <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
+              {content.login}
+            </p>
+          </a>
+
           <a href="/meet">
             <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
               {content.meet}
@@ -88,6 +101,11 @@ const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
             </p>
             <Switch id="switcher" defaultSelected aria-label="Automatic updates" />
           </div>
+          <Button
+            className="mt-[2vh] w-[90%] mx-auto h-fit py-[2%]"
+            color="danger"
+            variant="flat"
+          >{content.unLoggin}</Button>
         </div>
       </PopoverContent>
     </Popover>

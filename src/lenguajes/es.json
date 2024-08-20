@@ -2,7 +2,7 @@
     "layout": {
         "title": "Pulsetech - Desarrollo y diseño web"
     },
-    "nav_bar" : {
+    "nav_bar": {
         "elements": [
             "Inicio",
             "Páginas",
@@ -12,12 +12,14 @@
             "Contacto"
         ],
         "popover_elements": {
-            "meet" : "Coordinar reunión",
-            "language" : "Lenguaje",
-            "spanish" : "Español",
+            "login": "Iniciar sesión",
+            "meet": "Coordinar reunión",
+            "language": "Lenguaje",
+            "spanish": "Español",
             "english": "Inglés",
-            "theme" : "Tema oscuro"
-        }  
+            "theme": "Tema oscuro",
+            "unLoggin": "Cerrar sesión"
+        }
     },
     "home": {
         "paragraph": "Desarrollo y diseño web",
@@ -102,8 +104,8 @@
         "second_button": "O envíanos un mensaje directo"
     },
     "footer": {
-        "categories" : {
-            "title" : "Categorías",
+        "categories": {
+            "title": "Categorías",
             "sections": [
                 "Inicio",
                 "Tipos de aplicaciones",
@@ -113,30 +115,43 @@
                 "Contacto"
             ]
         },
-        "contact" : {
+        "contact": {
             "title": "Contáctanos"
         },
         "follow": {
-            "title" : "Síguenos en Instagram"
+            "title": "Síguenos en Instagram"
         }
     },
-    "meet" : {
-        "title" : "Coordina una reunión",
-        "text" : "Coticemos tu aplicación",
-        "confirm_button" : "Confirmar",
-        "back_button" : "Cancelar y volver",
-        "message_button" : "Enviar mensaje directo",
-        "modal" : {
-            "title_modal" : "Ingresá tu información",
-            "placeholder_username" : "Nombre de empresa o usuario",
-            "placeholder_phone" : "Número telefónico",
-            "title_description" : "Descripción (opcional)",
-            "placeholder_description" : "Ingresa una breve descripción de tu proyecto",
-            "button_close" : "Cerrar",
+    "meet": {
+        "title": "Coordina una reunión",
+        "text": "Coticemos tu aplicación",
+        "confirm_button": "Confirmar",
+        "back_button": "Cancelar y volver",
+        "message_button": "Enviar mensaje directo",
+        "modal": {
+            "title_modal": "Ingresá tu información",
+            "placeholder_username": "Nombre de empresa o usuario",
+            "placeholder_phone": "Número telefónico",
+            "title_description": "Descripción (opcional)",
+            "placeholder_description": "Ingresa una breve descripción de tu proyecto",
+            "button_close": "Cerrar",
             "button_confirm": "Confirmar",
-            "title_success" : "Reunión coordinada con éxito",
-            "text_success" : "Durante las 24hs previas a la reunión te enviaremos un mensaje para que puedas confirmar tu asistencia a la misma.",
-            "button_home" : "Volver a la página principal"
+            "title_success": "Reunión coordinada con éxito",
+            "text_success": "Durante las 24hs previas a la reunión te enviaremos un mensaje para que puedas confirmar tu asistencia a la misma.",
+            "button_home": "Volver a la página principal"
         }
+    },
+    "login": {
+        "title_layout" : "Iniciar sesión",
+        "title": "Bienvenido denuevo",
+        "paragraph": "Inicia sesión o regístrate",
+        "label_email": "Correo electrónico",
+        "label_password": "Contraseña",
+        "not_register_text" : "¿Aún no tienes una cuenta?",
+        "not_register_button" : "Crea una",
+        "button_loggin": "Iniciar sesión",
+        "or": "o",
+        "button_google": "Continuar con Google",
+        "button_facebook": "Continuar con Facebook"
     }
 }

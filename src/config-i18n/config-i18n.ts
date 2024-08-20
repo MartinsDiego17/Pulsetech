@@ -7,11 +7,13 @@ interface LayoutConfig {
 interface NavbarConfig {
     elements: string[]
     popover_elements: {
+        login: string;
         meet: string
         language: string
         spanish: string
         english: string
-        theme: string
+        theme: string;
+        unLoggin: string
     }
 }
 
@@ -98,6 +100,20 @@ interface MeetConfig {
     }
 }
 
+interface LoginConfig {
+    title_layout: string
+    title: string
+    paragraph: string
+    label_email: string
+    not_register_text: string
+    not_register_button: string
+    label_password: string
+    button_loggin: string
+    or: string
+    button_google: string
+    button_facebook: string
+}
+
 export const getContents = (current: any) => {
     const i18n = getI18N({ currentLocale: current });
 
@@ -110,6 +126,7 @@ export const getContents = (current: any) => {
     const go_work: GoworkConfig = i18n.go_work;
     const footer: FooterConfig = i18n.footer;
     const meet: MeetConfig = i18n.meet;
+    const login: LoginConfig = i18n.login;
 
     return {
         layout,
@@ -120,6 +137,7 @@ export const getContents = (current: any) => {
         professionals,
         go_work,
         footer,
-        meet
+        meet,
+        login
     }
 };

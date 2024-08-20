@@ -12,11 +12,13 @@
             "Contact"
         ],
         "popover_elements": {
-            "meet": "Schedule a Meeting",
+            "login": "Login",
+            "meet": "Schedule meeting",
             "language": "Language",
             "spanish": "Spanish",
             "english": "English",
-            "theme": "Dark Theme"
+            "theme": "Dark theme",
+            "unLoggin": "Logout"
         }
     },
     "home": {
@@ -138,5 +140,18 @@
             "text_success": "We will send you a message within 24 hours prior to the meeting to confirm your attendance.",
             "button_home": "Return to the homepage"
         }
+    },
+    "login": {
+        "title_layout" : "Sign in",
+        "title": "Welcome back",
+        "paragraph": "Log in or sign up",
+        "label_email": "Email",
+        "label_password": "Password",
+        "not_register_text" : "¿Don't have an account yet?",
+        "not_register_button" : "Create one",
+        "button_loggin": "Log in",
+        "or": "or",
+        "button_google": "Continue with Google",
+        "button_facebook": "Continue with Facebook"
     }
 }

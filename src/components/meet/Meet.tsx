@@ -96,7 +96,7 @@ const Meet = ({ content }: { content: MeetConfig }) => {
                     <p className="leading-none mt-[2%] lg:mt-0 text-[.9rem] text-[#ccc] text-center">
                         {text}
                     </p>
-                    <div className="w-3/5 flex justify-between mx-auto">
+                    <div className="lg:w-full w-3/5 flex justify-between mx-auto">
                         <DatePicker
                             onChange={handleDate}
                             className="lg:mt-[7vw] w-[65%] mt-[2vw]"

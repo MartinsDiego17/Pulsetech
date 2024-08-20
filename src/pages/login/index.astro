@@ -1,0 +1,7 @@
+---
+import Login from "../../components/login/Login.astro";
+import { getContents } from "../../config-i18n/config-i18n";
+const { login } = getContents(Astro.currentLocale);
+---
+
+<Login client:visible content={login} />
