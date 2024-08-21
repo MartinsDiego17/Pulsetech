@@ -1,6 +1,5 @@
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, Textarea, button } from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure, Input, Textarea, Button } from "@nextui-org/react";
 import { sendMeet } from "../../functions/meet/SendMeet";
-import { useState } from "react";
 import { navigate } from "astro:transitions/client";
 
 interface Props {
@@ -40,7 +39,6 @@ export default function App({
     disabled,
     success,
     setSuccess,
-    failure,
     setFailure,
     content
 }: Props) {
@@ -58,7 +56,7 @@ export default function App({
         button_home
     } = content;
 
-    const handleSubmit = (close: any) => {
+    const handleSubmit = () => {
         const response = sendMeet(dataMeet);
         if (response) setSuccess(true);
         else setFailure(true);
@@ -131,7 +129,7 @@ export default function App({
                                 <Button className={`${success && "hidden"}`} color="danger" variant="light" onPress={onClose}>
                                     {button_close}
                                 </Button>
-                                <Button className={`${success && "hidden"}`} isDisabled={localDisabled()} color="primary" onPress={() => handleSubmit(onClose)}>
+                                <Button className={`${success && "hidden"}`} isDisabled={localDisabled()} color="primary" onPress={() => handleSubmit()}>
                                     {button_confirm}
                                 </Button>
                                 <Button onClick={navigateHome} className={`${!success && "hidden"} px-[2vw] rounded-full mt-[3vw] py-[1vw]`}>{button_home}</Button>

@@ -4,7 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import background from "../../../public/images/body/bg2.jpg";
 import { useState } from "react";
 import ModalMeet from "./ModalMeet";
-import { getLocalTimeZone, parseDate, today } from "@internationalized/date";
+import { getLocalTimeZone,  today } from "@internationalized/date";
 import { navigate } from "astro:transitions/client";
 
 interface MeetConfig {

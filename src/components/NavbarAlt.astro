@@ -2,7 +2,7 @@
 import Logo from "./Logo.astro";
 import MenuPop from "./header/MenuPop";
 const { content } = Astro.props;
-const { elements, popover_elements } = content;
+const { popover_elements } = content;
 ---
 
 <nav
@@ -11,7 +11,7 @@ const { elements, popover_elements } = content;
 >
     <Logo />
     <ul class="flex gap-x-10 place-items-center">
-            <MenuPop client:visible content={popover_elements} />
+        <MenuPop client:visible content={popover_elements} />
     </ul>
 </nav>
 
