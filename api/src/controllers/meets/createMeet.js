@@ -1,10 +1,10 @@
 const { meet } = require('../../database/db');
 
-const createMeet = async ({ id, date, hour, phoneNumber, description, userName, isActive, userId }) => {
+const createMeet = async ({ date, hour, phoneNumber, description, userName, isActive, userId }) => {
 
     const current_meets = meet.findAll();
 
-    const response = await meet.create({ id, date, hour, phoneNumber, description, userName, isActive, userId });
+    const response = await meet.create({ date, hour, phoneNumber, description, userName, isActive, userId });
 
     console.log("Creando meet - sape")
 

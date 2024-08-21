@@ -1,8 +1,8 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, UUIDV4 } = require('sequelize');
 
 module.exports = (sequelize) => {
   sequelize.define('meet', {
-    id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+    id: { type: DataTypes.UUID, defaultValue: UUIDV4, primaryKey: true },
     date: { type: DataTypes.STRING, allowNull: false },
     hour: { type: DataTypes.STRING, allowNull: false },
     phoneNumber: { type: DataTypes.STRING },

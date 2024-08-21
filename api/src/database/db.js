@@ -1,18 +1,18 @@
 require('dotenv').config();
 const pg = require('pg');
 const { Sequelize } = require('sequelize');
-/* const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
- */
-const DB_USER = "postgres";
-const DB_PASSWORD = 1234;
-const DB_HOST = "localhost";
-const DB_PORT = 5432;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+
+// const DB_USER = "postgres";
+// const DB_PASSWORD = 1234;
+// const DB_HOST = "localhost";
+// const DB_PORT = 5432;
 
 const UsersModel = require("../models/Users");
 const MeetsModel = require("../models/Meets");
 
 const sequelize = new Sequelize(
-   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/pulsetech`,
+   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
    {
       logging: false,
       native: false,
