@@ -9,9 +9,10 @@ interface Props {
         date: string,
         hour: string,
         userName: string,
-        phone_number: string,
+        phoneNumber: string,
         description: string,
         isActive: boolean
+        userId: number
     }
     disabled: boolean
     success: boolean
@@ -31,6 +32,8 @@ interface Props {
         button_home: string
     }
 }
+
+
 
 export default function App({
     confirm_button,
@@ -56,18 +59,18 @@ export default function App({
         button_home
     } = content;
 
-    const handleSubmit = () => {
-        const response = sendMeet(dataMeet);
+    const handleSubmit = async () => {
+        const response = await sendMeet(dataMeet);
         if (response) setSuccess(true);
         else setFailure(true);
     };
     const localDisabled = () => {
-        const { userName, phone_number } = dataMeet;
-        if (!userName.length || !phone_number.length) return true;
+        const { userName, phoneNumber } = dataMeet;
+        if (!userName.length || !phoneNumber.length) return true;
         else return false;
     }
     const navigateHome = () => {
-        navigate("/")
+        navigate("/");
     }
 
     return (
@@ -96,8 +99,8 @@ export default function App({
                                             label={placeholder_username}
                                         />
                                         <Input
-                                            name="phone_number"
-                                            value={dataMeet.phone_number}
+                                            name="phoneNumber"
+                                            value={dataMeet.phoneNumber}
                                             onChange={handleFields}
                                             type="text"
                                             label={placeholder_phone}

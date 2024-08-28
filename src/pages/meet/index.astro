@@ -6,7 +6,7 @@ import LayoutAlt from "../../layouts/LayoutAlt.astro";
 ---
 
 <LayoutAlt title="Pulsetech - meet">
-  <Meet content={meet} client:visible />
+  <Meet client:only="react" content={meet} />
 </LayoutAlt>
 
 <style is:global>

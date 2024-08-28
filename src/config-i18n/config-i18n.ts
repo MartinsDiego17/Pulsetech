@@ -108,10 +108,28 @@ interface LoginConfig {
     not_register_text: string
     not_register_button: string
     label_password: string
+    error_login: string
     button_loggin: string
     or: string
     button_google: string
     button_facebook: string
+}
+
+interface RegisterConfig {
+    title_layout: string
+    title: string
+    label_email: string
+    label_password: string
+    placeholder_password: string
+    button_confirm: string
+    error_msj: string
+}
+
+interface ModalcloseConfig {
+    title: string
+    subtitle: string
+    button_cancel: string
+    button_confirm: string
 }
 
 export const getContents = (current: any) => {
@@ -127,6 +145,8 @@ export const getContents = (current: any) => {
     const footer: FooterConfig = i18n.footer;
     const meet: MeetConfig = i18n.meet;
     const login: LoginConfig = i18n.login;
+    const register: RegisterConfig = i18n.register;
+    const modal_close: ModalcloseConfig = i18n.modal_close;
 
     return {
         layout,
@@ -138,6 +158,8 @@ export const getContents = (current: any) => {
         go_work,
         footer,
         meet,
-        login
+        login,
+        register,
+        modal_close
     }
 };

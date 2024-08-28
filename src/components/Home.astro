@@ -7,16 +7,16 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
 
 <main
     id="home"
-    class="home relative leading-none px-[7vw] main h-screen w-screen flex justify-center place-items-center"
+    class="min-h-screen inicio relative leading-none px-[7vw] main h-screen w-screen flex justify-center place-items-center"
 >
+
+    <video muted autoplay loop>
+        <source src="../../images/body/bghome2.mp4" type="video/mp4" />
+    </video>
+
+    <div class="capa"></div>
+
     <div class="flex justify-center flex-col">
-        <p
-            class="lg:mb-[5%] 2xl:text-[1.1rem] flex justify-between place-items-center gap-3 text-[#ccc] mx-auto py-[9px] px-8 text-[.9rem] text-border mb-[2%] bg-[#222] transition duration-150 rounded-full w-fit"
-        >
-            {paragraph}
-            <span class="w-[10px] h-[10px] block rounded-full bg-primary"
-            ></span>
-        </p>
 
         <h1
             class="lg:mb-[5%] lg:text-[2.3rem] text-balance text-[#eee] 2xl:text-[5rem] mb-[2%] text-center font-semibold text-[3.5rem]"
@@ -31,7 +31,7 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
         </p>
         <a href="/meet">
             <button
-                class="lg:py-[1.5vh] 2xl:text-[1rem] 2xl:py-[1.5vh] w-fit place-items-center hover:gap-x-5 mx-auto flex gap-x-2 button-default py-[2vh] px-[2vw] text-[.8rem] mt-[2%]"
+                class="lg:w-[60%] lg:justify-center lg:leading-[1.2] lg:py-[1.5vh] 2xl:text-[1rem] 2xl:py-[1.5vh] w-fit place-items-center font-semibold hover:gap-x-5 mx-auto flex gap-x-2 button-default py-[2vh] px-[2vw] text-[.8rem] mt-[2%]"
                 ><span>{button_text}</span><i
                     class="text-[.8rem] fa-solid fa-arrow-right"></i>
             </button>
@@ -40,6 +40,31 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
 </main>
 
 <style is:global>
+
+    #home {
+        position: relative;
+        z-index: 2;
+    }
+    
+    video {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1 ;
+        object-fit: cover;
+    }
+
+    .capa {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
     .main {
         /* background-image: url(../../images/body/bg3.jpg); */
         background-size: cover;
@@ -85,7 +110,7 @@ const { paragraph, first_text, second_text, second_paragraph, button_text } =
     }
     .main::before {
         content: "";
-        background: linear-gradient(transparent, transparent, black);
+        background: linear-gradient(transparent,transparent, #121212);
         position: absolute;
         height: 100vh;
         width: 100vw;

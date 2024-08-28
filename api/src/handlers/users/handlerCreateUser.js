@@ -3,8 +3,8 @@ const createUser = require("../../controllers/users/createUser");
 const handlerCreateUser = async (req, res) => {
 
     try {
-        const { id, email } = req.body;
-            const user_create = await createUser({ id, email });
+        const { email, password } = req.body;
+        const user_create = await createUser({ email, password });
         res.status(200).json(user_create)
 
     } catch (error) {

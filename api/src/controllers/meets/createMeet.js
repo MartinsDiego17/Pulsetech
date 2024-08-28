@@ -6,8 +6,6 @@ const createMeet = async ({ date, hour, phoneNumber, description, userName, isAc
 
     const response = await meet.create({ date, hour, phoneNumber, description, userName, isActive, userId });
 
-    console.log("Creando meet - sape")
-
     return response;
 
 }

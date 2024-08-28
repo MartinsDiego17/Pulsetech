@@ -26,10 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         current_li = "trabajos"
                         break;
                     }
-                    case "professionals": {
-                        current_li = "profesionales"
-                        break;
-                    }
                     case "contact": {
                         current_li = "contacto"
                         break;
@@ -38,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         break;
                     }
                 }
-
                 elementsArray.forEach(element => {
                     if (element.classList.contains(current_li)) {
                         element.classList.add("current-section");

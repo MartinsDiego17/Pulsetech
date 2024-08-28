@@ -4,11 +4,12 @@ interface Props {
 }
 const { title } = Astro.props;
 import "@fontsource-variable/inter";
+import '@fontsource/poppins';
 import Navbar from "../components/Navbar.astro";
 import { getContents } from "../config-i18n/config-i18n";
 import { ViewTransitions } from "astro:transitions";
 const { currentLocale } = Astro;
-const { navbar } = getContents(currentLocale);
+const { navbar, modal_close } = getContents(currentLocale);
 ---
 
 <!doctype html>
@@ -24,7 +25,7 @@ const { navbar } = getContents(currentLocale);
 	</head>
 	<body>
 		<slot />
-		<Navbar content={navbar} />
+		<Navbar content_modal={modal_close} content={navbar} />
 	</body>
 </html>
 
@@ -37,7 +38,8 @@ const { navbar } = getContents(currentLocale);
 		height: fit-content;
 		overflow-x: hidden;
 		font-family: "Inter variable";
-		background-color: black;
+		background-color: #121212;
+		background-attachment: fixed;
 	}
 	.text-primary {
 		color: #08c199;
@@ -49,14 +51,17 @@ const { navbar } = getContents(currentLocale);
 		background-color: #035146;
 	}
 	.button-default {
-		background-color: transparent;
-		border: solid 1px #08c199;
-		border-radius: 5px;
+		background-color: rgba(8, 193, 153, 0.6);
+		background-color: #222;
+		border-radius: 2px;
 		transition: 0.2s;
-		color: #08c199;
+		color: white;
+		z-index: 10;
+		backdrop-filter: blur(10px);
 	}
 	.button-default:hover {
 		background-color: #08c199;
+		box-shadow: 0px 0px 200px #08c199;
 		filter: brightness(110%);
 		color: black;
 	}
@@ -95,5 +100,16 @@ const { navbar } = getContents(currentLocale);
 	}
 	#switcher span:nth-child(2) {
 		background-color: #08c199;
+	}
+	.content-menupop .modal-close {
+		font-size: 0.8rem;
+		border-radius: 50px;
+		padding: 1.5% 0;
+		width: 90%;
+		height: fit-content;
+		margin: 2% auto;
+	}
+	.current-section {
+		color: #08c199;
 	}
 </style>

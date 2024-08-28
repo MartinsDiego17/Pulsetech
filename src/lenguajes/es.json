@@ -23,8 +23,8 @@
     },
     "home": {
         "paragraph": "Desarrollo y diseño web",
-        "first_text": "Desarrollamos tu aplicación",
-        "second_text": "en tan solo unas semanas",
+        "first_text": "Potenciamos tu negocio",
+        "second_text": "una línea a la vez",
         "second_paragraph": "Somos una compañía centrada y comprometida con el desarrollo de productos que le permitan a nuestros clientes y a empresas escalar su negocio al siguiente nivel.",
         "button_text": "Trabaja con nosotros"
     },
@@ -142,16 +142,32 @@
         }
     },
     "login": {
-        "title_layout" : "Iniciar sesión",
+        "title_layout": "Iniciar sesión",
         "title": "Bienvenido denuevo",
         "paragraph": "Inicia sesión o regístrate",
         "label_email": "Correo electrónico",
         "label_password": "Contraseña",
-        "not_register_text" : "¿Aún no tienes una cuenta?",
-        "not_register_button" : "Crea una",
+        "not_register_text": "¿Aún no tienes una cuenta?",
+        "not_register_button": "Crea una",
+        "error_login": "Las credenciales indicadas no coinciden",
         "button_loggin": "Iniciar sesión",
         "or": "o",
         "button_google": "Continuar con Google",
         "button_facebook": "Continuar con Facebook"
+    },
+    "register": {
+        "title_layout": "Registro",
+        "title": "Regístrate",
+        "label_email": "Correo electrónico",
+        "label_password": "Contraseña",
+        "placeholder_password": "Mínimo 8 caracteres",
+        "button_confirm": "Confirmar",
+        "error_msj": "Ya hay usuarios registrados con ese nombre"
+    },
+    "modal_close": {
+        "title": "Cerrar sesión",
+        "subtitle": "¿Estás seguro de querer cerrar sesión?",
+        "button_cancel": "Cancelar",
+        "button_confirm": "Confirmar"
     }
 }

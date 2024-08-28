@@ -1,7 +1,10 @@
 ---
-import Login from "../../../components/login/Login.astro";
+import LayoutAlt from "layouts/LayoutAlt.astro";
+import Login from "../../../components/Login.astro";
 import { getContents } from "../../../config-i18n/config-i18n";
-const { login } = getContents(Astro.currentLocale);
+const { login, modal_close } = getContents(Astro.currentLocale);
 ---
 
-<Login client:visible content={login} />
+<LayoutAlt title={login.title_layout}>
+    <Login  content_modal={modal_close} content={login} />
+</LayoutAlt>        

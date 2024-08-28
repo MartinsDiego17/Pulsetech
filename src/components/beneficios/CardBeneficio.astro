@@ -3,7 +3,7 @@ const { className, iconClass, title, paragraph } = Astro.props;
 ---
 
 <div
-    class={`2xl:h-fit cardContainer lg:mb-[5%] w-full h-[30vh] lg:h-fit text-white rounded-[10px] item${className} ${className > 1 && "h-[45vh]"}`}
+    class={`border-1 border-[#222] 2xl:h-fit cardContainer lg:mb-[5%] w-full h-[30vh] lg:h-fit text-white rounded-[10px] item${className} ${className > 1 && "h-[45vh]"}`}
 >
     <h2>
         <span
@@ -11,7 +11,7 @@ const { className, iconClass, title, paragraph } = Astro.props;
         >
             <i class={`2xl:text-[1.5rem] text-primary ${iconClass}`}></i>
         </span>
-        <span class="2xl:text-[1.3rem] font-bold text-[1.2rem] lg:pl-[1.5vh] text-[#ccc] pl-[1vw] lg:text-[.9rem]">{title}</span>
+        <span class="2xl:text-[1.3rem] font-bold text-[1.2rem] lg:pl-[1.5vh] text-[#eee] pl-[1vw] lg:text-[.9rem]">{title}</span>
     </h2>
     <p class="2xl:text-[1.1rem] lg:w-[95%] text-balance text-[#888] text-[.9rem] mt-[1vw]">{paragraph}</p>
 </div>

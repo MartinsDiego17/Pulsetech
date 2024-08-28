@@ -1,16 +1,22 @@
 const { user } = require('../../database/db');
 
-const createUser = async ({ id, email }) => {
+const createUser = async ({ email, password }) => {
 
+    const current_users = await user.findAll();
+    let existent = 0;
 
-    const current_users = user.findAll();
-
-    const response = await user.create({
-        id,
-        email
+    current_users.forEach(user => {
+        if (user.dataValues.email === email) existent = 1;
     });
 
-    console.log("Creando usuario - sape")
+    if (existent) return { error: "Ya hay un usuario registrado con este email." };
+
+
+    const response = await user.create({
+        email,
+        password
+    });
+
 
     return response;
 

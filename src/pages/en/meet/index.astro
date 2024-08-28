@@ -6,7 +6,7 @@ const { meet } = getContents(Astro.currentLocale);
 ---
 
 <LayoutAlt title="Pulsetech - meet">
-  <Meet content={meet} client:visible />
+  <Meet content={meet} client:only />
 </LayoutAlt>
 
 <style is:global>

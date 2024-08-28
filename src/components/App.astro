@@ -4,22 +4,23 @@ import Home from "./Home.astro";
 import Layout from "../layouts/Layout.astro";
 import Beneficios from "./Beneficios.astro";
 import Works from "./Works.astro";
-import Professionals from "./Professionals.astro";
 import Contacto from "./Contacto.astro";
 import Footer from "./Footer.astro";
 import { getContents } from "../config-i18n/config-i18n.ts";
 
-const { layout, home, type_pages, benefits, professionals, go_work, footer } = getContents(Astro.currentLocale);
+const { layout, home, type_pages, benefits, go_work, footer } = getContents(
+    Astro.currentLocale,
+);
 ---
 
 <Layout title={layout.title}>
     <Home content={home} />
     <TypeProjects content={type_pages} />
     <Beneficios content={benefits} />
-    <Works />
-    <Professionals content={professionals} />
+
+    //SECCIÓN DE TRABAJOS PRÓXIMAMENTE
+    <!-- <Works /> -->
+
     <Contacto content={go_work} />
     <Footer content={footer} />
 </Layout>
-
-<!-- <script src="../scripts/lazyload.js"></script> -->

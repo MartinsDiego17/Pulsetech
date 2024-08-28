@@ -23,8 +23,8 @@
     },
     "home": {
         "paragraph": "Web Development and Design",
-        "first_text": "We develop your application",
-        "second_text": "in just a few weeks",
+        "first_text": "Empowering your business",
+        "second_text": "one line at a time",
         "second_paragraph": "We are a company focused and committed to developing products that allow our clients and businesses to scale their operations to the next level.",
         "button_text": "Work with Us"
     },
@@ -142,16 +142,32 @@
         }
     },
     "login": {
-        "title_layout" : "Sign in",
+        "title_layout": "Login",
         "title": "Welcome back",
         "paragraph": "Log in or sign up",
         "label_email": "Email",
         "label_password": "Password",
-        "not_register_text" : "¿Don't have an account yet?",
-        "not_register_button" : "Create one",
+        "not_register_text": "Don't have an account yet?",
+        "not_register_button": "Create one",
+        "error_login": "The credentials provided do not match",
         "button_loggin": "Log in",
         "or": "or",
         "button_google": "Continue with Google",
         "button_facebook": "Continue with Facebook"
+    },
+    "register": {
+        "title_layout": "Register",
+        "title": "Sign up",
+        "label_email": "Email",
+        "label_password": "Password",
+        "placeholder_password": "Minimum 8 characters",
+        "button_confirm": "Confirm",
+        "error_msj": "There is already a user registered with that email"
+    },
+    "modal_close": {
+        "title": "Log Out",
+        "subtitle": "Are you sure you want to log out?",
+        "button_cancel": "Cancel",
+        "button_confirm": "Confirm"
     }
 }

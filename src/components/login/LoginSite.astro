@@ -1,0 +1,52 @@
+---
+import LayoutAlt from "../../layouts/LayoutAlt.astro";
+import "@fortawesome/fontawesome-free/css/all.css";
+import LeftLogin from "./LeftLogin.astro";
+import RightLogin from "./RightLogin.tsx";
+const { content, content_modal } = Astro.props;
+---
+
+<LayoutAlt title={`Pulsetech - ${content.title_layout}`}>
+    <section
+        class="main-login h-screen w-screen flex justify-between place-items-center"
+    >
+        <LeftLogin />
+        <RightLogin
+            content={content}
+            content_modal={content_modal}
+            client:only
+        />
+    </section>
+</LayoutAlt>
+
+<style is:global>
+    .left-login::before {
+        content: "";
+        left: 0;
+        top: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 1)
+        );
+    }
+    .shadow-class:focus {
+        border-color: #666;
+    }
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .main-login {
+        animation: opacity 1s linear both;
+    }
+</style>

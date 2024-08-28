@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Popover, PopoverTrigger, PopoverContent, Switch, Button } from "@nextui-org/react";
+import { Popover, PopoverTrigger, PopoverContent } from "@nextui-org/react";
 import { navigate } from "astro/virtual-modules/transitions-router.js";
+import { getDataUser } from "../../functions/user/getDataUser";
+import ModalClose from "../login/ModalClose";
 
 interface MenuPopProps {
   content: {
@@ -12,14 +14,25 @@ interface MenuPopProps {
     theme: string;
     unLoggin: string;
   };
+  content_modal: {
+    title: string
+    subtitle: string
+    button_cancel: string
+    button_confirm: string
+  }
 }
 
-const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
+
+const MenuPop: React.FC<MenuPopProps> = ({ content, content_modal }) => {
 
   const [disabled, setDisabled] = useState({
     es: true,
     en: false
-  })
+  });
+
+
+
+  const [currentLogin, setCurrentLogin] = useState(getDataUser().isLoggin);
 
   useEffect(() => {
     const currentPath = window.location.pathname;
@@ -36,18 +49,16 @@ const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
     }
   }, []);
 
-  const handleLanguage = (event: (React.MouseEvent<HTMLButtonElement> | undefined | any), language: string) => {
-    if (window.location.pathname === "/meet" && language === "en") {
-      navigate("/en/meet")
-      return;
+  const handleLanguage = (event: React.MouseEvent<HTMLButtonElement> | undefined | any, language: string) => {
+    const currentPath = window.location.pathname;
+
+    if (language === "en" && !currentPath.startsWith("/en")) {
+      navigate(`/en${currentPath}`);
+    } else {
+      navigate(language);
     }
-    else if (window.location.pathname === "/login" && language === "en") {
-      navigate("/en/login")
-      return;
-    }
-    navigate(language);
-    return;
   };
+
 
   return (
     <Popover placement="bottom-end">
@@ -59,13 +70,16 @@ const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
         </button>
       </PopoverTrigger>
       <PopoverContent className="lg:leading-[2.5] border border-[#222] lg:w-[70vw] lg:px-[10px] px-0 w-[20vw] flex dark">
-        <div className="text-[#ccc] py-[.5vw] w-full flex flex-col">
+        <div className="content-menupop text-[#ccc] py-[.5vw] w-full flex flex-col">
 
-          <a href="/login">
-            <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
-              {content.login}
-            </p>
-          </a>
+          {
+            !currentLogin &&
+            <a href="/login">
+              <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
+                {content.login}
+              </p>
+            </a>
+          }
 
           <a href="/meet">
             <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
@@ -95,17 +109,12 @@ const MenuPop: React.FC<MenuPopProps> = ({ content }) => {
 
           <hr className="w-full mt-[1vw] border-[#333]" />
 
-          <div className="px-[.5vw] mt-[1vw] w-full flex justify-between place-items-center">
-            <p className="2xl:text-[1rem] text-[.8rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
-              {content.theme}
-            </p>
-            <Switch id="switcher" defaultSelected aria-label="Automatic updates" />
+          <div className="flex place-items-center justify-center mt-[2%]">
+            {
+              currentLogin &&
+              <ModalClose content={content_modal} />
+            }
           </div>
-          <Button
-            className="mt-[2vh] w-[90%] mx-auto h-fit py-[2%]"
-            color="danger"
-            variant="flat"
-          >{content.unLoggin}</Button>
         </div>
       </PopoverContent>
     </Popover>
