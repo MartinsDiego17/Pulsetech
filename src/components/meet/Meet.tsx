@@ -89,11 +89,14 @@ const Meet = ({ content }: { content: MeetConfig }) => {
         else return false;
     };
     const navigateHome = () => {
-        navigate("/")
+        console.log("hola")
+        navigate("/");
     };
 
     useEffect(() => {
-        if (!getDataUser().isLoggin) { } navigate("/login");
+        if (!getDataUser().isLoggin) {
+            navigate("/login");
+        }
 
         const localFetch = async () => {
             const currentMeet = await fetchCurrentMeet(getDataUser().id);

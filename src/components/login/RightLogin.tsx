@@ -4,7 +4,6 @@ import { navigate } from "astro:transitions/client";
 import { getDataUser } from "../../functions/user/getDataUser";
 import ModalClose from "./ModalClose";
 import { validateUser } from "../../functions/login/validateUser";
-import { logUsers } from "../../client";
 
 interface ContentProps {
     title: string
@@ -83,7 +82,6 @@ const RightLogin = ({ content, content_modal }: PropsConfig) => {
     }
 
     useEffect(() => {
-        logUsers();
         setCurrentLogin(getDataUser()?.isLoggin);
         setTimeout(() => {
             setLoading(false);
