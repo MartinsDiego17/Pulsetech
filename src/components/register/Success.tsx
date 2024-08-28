@@ -19,12 +19,12 @@ const Success = () => {
     return (
         <>
             <div
-                className="w-[35%] h-[65vh] flex flex-col place-items-center justify-center p-[5vh] rounded-[10px] bg-[#181818]"
+                className="lg:w-4/5 lg:h-[30vh] w-[35%] h-[65vh] flex flex-col place-items-center justify-center p-[5vh] rounded-[10px] bg-[#181818]"
             >
                 {
                     !loading ?
                         <div className="pb-[10%]">
-                            <h1 className="mb-[3vh] text-[1.2rem] flex place-items-center justify-center gap-x-2 text-primary">
+                            <h1 className="lg:text-balance lg:text-center mb-[3vh] text-[1.2rem] flex place-items-center justify-center gap-x-2 text-primary">
                                 <span>Te haz registrado con éxito</span>
                                 <i className="text-primary fa-regular fa-circle-check"></i>
                             </h1>

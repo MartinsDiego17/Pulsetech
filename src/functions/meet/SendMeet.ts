@@ -10,12 +10,15 @@ interface DataMeetConfig {
     userId: number
 }
 
-export const sendMeet = async (dataMeet : DataMeetConfig) => {
+export const sendMeet = async (dataMeet: DataMeetConfig) => {
 
     const { date, hour, phoneNumber, description, userName, isActive, userId } = dataMeet;
 
+    const meta_route = import.meta.env;
+    const route = !meta_route.DEV ? meta_route.PUBLIC_GLOBAL_ROUTE : meta_route.PUBLIC_LOCAL_ROUTE;
+
     try {
-        const url = "http://localhost:3001/meets/createMeet";
+        const url = `${route}/meets/createMeet`;
 
         const response = await axios.post(url, {
             date,

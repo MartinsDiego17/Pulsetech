@@ -1,9 +1,11 @@
 import { Button } from "@nextui-org/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createUser } from "../../functions/login/createUser";
 import Success from "./Success";
 import "@fortawesome/fontawesome-free/css/all.css";
 import { addUser } from "../../functions/user/addUser";
+import { getDataUser } from "functions/user/getDataUser";
+import { navigate } from "astro/virtual-modules/transitions-router.js";
 
 interface RegisterConfig {
     title_layout: string
@@ -47,12 +49,17 @@ const Register = ({ content } : { content: RegisterConfig }) => {
             setFailure(true);
         }
     };
-
     const validationsInputs = () => {
         const { email, password } = dataUser;
         if (!email.length || password.length < 8) return true;
         else return false;
     }
+
+    useEffect(() => {
+        if(getDataUser().isLoggin) {
+            navigate("/");
+        }
+    }, []);
 
     return (
         <div className="w-screen h-[100vh] flex flex-col justify-center place-items-center pb-[2%]">

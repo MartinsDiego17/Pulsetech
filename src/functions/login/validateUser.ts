@@ -8,8 +8,12 @@ interface DataLogin {
 }
 
 export const validateUser = async (dataLogin: DataLogin) => {
+
+    const meta_route = import.meta.env;
+    const route = !meta_route.DEV ? meta_route.PUBLIC_GLOBAL_ROUTE : meta_route.PUBLIC_LOCAL_ROUTE;
+
     try {
-        const url = "http://localhost:3001/users/validate";
+        const url = `${route}/users/validate`;
 
         const response = await axios.post(url, {
             email: dataLogin.email,
