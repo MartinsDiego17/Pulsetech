@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getCurrentRoute } from "functions/route/getCurrentRoute";
 
 interface DataMeetConfig {
     date: string,
@@ -14,11 +15,8 @@ export const sendMeet = async (dataMeet: DataMeetConfig) => {
 
     const { date, hour, phoneNumber, description, userName, isActive, userId } = dataMeet;
 
-    const meta_route = import.meta.env;
-    const route = !meta_route.DEV ? meta_route.PUBLIC_GLOBAL_ROUTE : meta_route.PUBLIC_LOCAL_ROUTE;
-
     try {
-        const url = `${route}/meets/createMeet`;
+        const url = `${getCurrentRoute()}/meets/createMeet`;
 
         const response = await axios.post(url, {
             date,

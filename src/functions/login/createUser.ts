@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getCurrentRoute } from 'functions/route/getCurrentRoute';
 
 interface DataLogin {
     email: string;
@@ -7,11 +8,9 @@ interface DataLogin {
 
 export const createUser = async (dataLogin: DataLogin) => {
 
-    const meta_route = import.meta.env;
-    const route = !meta_route.DEV ? meta_route.PUBLIC_GLOBAL_ROUTE : meta_route.PUBLIC_LOCAL_ROUTE;
 
     try {
-        const url = `${route}/users/createUser`;
+        const url = `${getCurrentRoute()}/users/createUser`;
 
         const response = await axios.post(url, {
             email: dataLogin.email,
