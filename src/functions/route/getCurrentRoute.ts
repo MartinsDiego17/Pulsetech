@@ -6,4 +6,4 @@ export const getCurrentRoute = () => {
     console.log("RUTA FINAL: ", route);  
     return route;
 
-}; 
+}; // 
