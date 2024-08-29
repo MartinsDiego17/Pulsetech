@@ -3,7 +3,7 @@ import { getCurrentRoute } from "functions/route/getCurrentRoute";
 
 export const fetchCurrentMeet = async (userId: number) => {
 
-    const final_user_id = userId === undefined ? 0 : userId; 
+    const final_user_id = userId === undefined ? 1 : userId; 
 
     try { 
         const url = `${getCurrentRoute()}/meets/${final_user_id}`; 
