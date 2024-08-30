@@ -32,18 +32,22 @@ const { elements, popover_elements } = content;
         >
             <a href="#works">{elements[3]}</a>
         </li>
-        -->      
+        -->
         <li
             class="xm:text-[.7rem] 2xl:text-[1.1rem] contacto lg:hidden text-[.8rem] text-[#eee]"
         >
             <a href="#contact">{elements[5]}</a>
         </li>
         <li
-        class="xm:text-[.7rem] 2xl:text-[1.1rem] contacto lg:hidden text-[.8rem] text-[#eee]"
-    >
-        <a href="#questions">{elements[6]}</a>
-    </li>
-        <MenuPop client:only="react" content={popover_elements} content_modal={content_modal} />
+            class="xm:text-[.7rem] 2xl:text-[1.1rem] contacto lg:hidden text-[.8rem] text-[#eee]"
+        >
+            <a href="#questions">{elements[6]}</a>
+        </li>
+        <MenuPop
+            client:only="react"
+            content={popover_elements}
+            content_modal={content_modal}
+        />
     </ul>
 </nav>
 
@@ -57,7 +61,7 @@ const { elements, popover_elements } = content;
             border-color: #222;
         }
         100% {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(18, 18, 18, 0.5);
             -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
             transition: 0.3s;
@@ -79,4 +83,3 @@ const { elements, popover_elements } = content;
         scroll-behavior: smooth;
     }
 </style>
-    
