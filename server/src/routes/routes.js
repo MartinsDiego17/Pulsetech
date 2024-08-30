@@ -11,15 +11,15 @@ const handlerValidateUser = require('../handlers/users/handlerValidate');
 const router = Router();
 
 //MEETS
-router.get("/meets/getMeets", handlerGetMeets);
-router.get("/meets/:id", handlerGetMeetById);
-router.post("/meets/createMeet", handlerCreateMeet);
+router.get("/api/meets/getMeets", handlerGetMeets);
+router.get("/api/meets/:id", handlerGetMeetById);
+router.post("/api/meets/createMeet", handlerCreateMeet);
 
 
 //USERS
-router.get("/users/getUsers", handlerGetUsers);
-router.get("/users/:id", handlerGetUserById);
-router.post("/users/validate", handlerValidateUser);
-router.post("/users/createUser", handlerCreateUser);
+router.get("/api/users/getUsers", handlerGetUsers);
+router.get("/api/users/:id", handlerGetUserById);
+router.post("/api/users/validate", handlerValidateUser);
+router.post("/api/users/createUser", handlerCreateUser);
 
 module.exports = router;
