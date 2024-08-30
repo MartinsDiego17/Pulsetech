@@ -2,13 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
-const routes = require("./src/routes/routes");
 const cors = require("cors");
-const { conn } = require("./src/database/db");
+
+const routes = require("../server/src/routes/routes");
+const { conn } = require("../server//src/database/db");
 
 const app = express();
 const port = 3001;
-
+ 
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(cookieParser());
