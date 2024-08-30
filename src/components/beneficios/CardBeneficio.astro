@@ -3,7 +3,7 @@ const { className, iconClass, title, paragraph } = Astro.props;
 ---
 
 <div
-    class={`border-1 border-[#191919] 2xl:h-fit cardContainer lg:mb-[5%] w-full h-[30vh] lg:h-fit text-white rounded-[10px] item${className} ${className > 1 && "h-[45vh] 2xl:h-[55vh]"}`}
+    class={`border-1 border-[#191919] 2xl:h-fit cardContainer lg:mb-[5%] w-full h-[30vh] lg:h-fit text-white rounded-[10px] item${className} ${className > 1 && "h-[45vh]"} ${className > 1 && "2xl:h-[55vh]"}`}
 >
     <h2>
         <span
