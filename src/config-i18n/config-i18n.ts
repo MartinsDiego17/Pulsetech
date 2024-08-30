@@ -132,6 +132,16 @@ interface ModalcloseConfig {
     button_confirm: string
 }
 
+interface FaqConfig {
+    title: string;
+    contents: {
+        title: string;
+        ariaLabel: string;
+        content: string;
+    }[];
+}
+
+
 export const getContents = (current: any) => {
     const i18n = getI18N({ currentLocale: current });
 
@@ -147,6 +157,7 @@ export const getContents = (current: any) => {
     const login: LoginConfig = i18n.login;
     const register: RegisterConfig = i18n.register;
     const modal_close: ModalcloseConfig = i18n.modal_close;
+    const faq: FaqConfig = i18n.faq;
 
     return {
         layout,
@@ -160,6 +171,7 @@ export const getContents = (current: any) => {
         meet,
         login,
         register,
-        modal_close
+        modal_close,
+        faq
     }
 };

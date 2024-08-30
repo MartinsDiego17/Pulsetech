@@ -1,0 +1,15 @@
+---
+import { Button } from "@nextui-org/react";
+import LayoutAlt from "layouts/LayoutAlt.astro";
+---
+
+<LayoutAlt title="Error 404">
+    <div class="flex-col w-screen h-screen flex justify-center place-items-center">
+        <h1 class="w-[80%] text-center text-balance text-[#eee] font-semibold text-[4.5rem]">No se encontró la página</h1>
+        <a href="/" class="w-fit mt-[2%]">
+            <Button client:visible className="text bg-[#ddd] rounded-[2px] px-[4vw] text-black">
+                Volver a Pulsetech
+            </Button>
+        </a>
+    </div>
+</LayoutAlt>

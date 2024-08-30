@@ -1,7 +1,6 @@
 ---
 const { content } = Astro.props;
-import Redirect from "./contacto/Redirect";
-const { title, first_button, second_button } = content;
+const { title, first_button } = content;
 ---
 
 <div
@@ -15,15 +14,14 @@ const { title, first_button, second_button } = content;
     </h1>
 
     <article
-        class="lg:flex lg:place-items-center lg:flex-col lg:bg-transparent my-[1vh] bg-[#222] w-fit mx-auto h-fit p-[1vh] rounded-full"
+        class="lg:flex lg:place-items-center lg:flex-col lg:bg-transparent my-[1vh] w-fit mx-auto h-fit p-[1vh] rounded-full"
     >
-        <a href="/meet">
+        <a target="_blank" href="https://api.whatsapp.com/send/?phone=3417506932&text&type=phone_number&app_absent=0">
             <button
-                class="2xl:text-[1rem] transition duration-200 hover:bg-[#08c199] py-[1.5vh] px-[2vh] first-button text-[.8rem] m-0 bg-primary rounded-full text-black"
+                class="2xl:text-[1rem] transition duration-200 hover:bg-[#08c199] py-[2vh] px-[3vh] first-button text-[.8rem] m-0 bg-primary rounded-[2px] text-black"
                 >{first_button}</button
             >
         </a>
-        <Redirect text={second_button} client:visible />
     </article>
 </div>
 
@@ -50,6 +48,6 @@ const { title, first_button, second_button } = content;
         top: 0;
         left: 0;
         z-index: 1;
-        background: linear-gradient(#121212, transparent, transparent, #121212);
+        background: linear-gradient(#121212, transparent, transparent,transparent, #121212);
     }
 </style>

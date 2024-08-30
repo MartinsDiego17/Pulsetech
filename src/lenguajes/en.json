@@ -100,7 +100,7 @@
     },
     "go_work": {
         "title": "Let's Get to Work",
-        "first_button": "Schedule a Meeting",
+        "first_button": "Get a quote for your application",
         "second_button": "Or Send Us a Direct Message"
     },
     "footer": {
@@ -169,5 +169,40 @@
         "subtitle": "Are you sure you want to log out?",
         "button_cancel": "Cancel",
         "button_confirm": "Confirm"
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "contents": [
+            {
+                "title": "What services do we offer?",
+                "ariaLabel": "Services",
+                "content": "We offer web development, web design, mobile app creation, SEO optimization, and website maintenance."
+            },
+            {
+                "title": "What is the work process like?",
+                "ariaLabel": "Process",
+                "content": "Our process includes: 1) Initial meeting to understand your needs, 2) Research and planning, 3) Design, 4) Development, 5) Testing and review, 6) Launch, and 7) Continuous support."
+            },
+            {
+                "title": "Do you design responsive websites?",
+                "ariaLabel": "Design and develop",
+                "content": "Yes, we develop web applications that are adaptable to all resolutions."
+            },
+            {
+                "title": "Pricing and payment methods",
+                "ariaLabel": "Prices",
+                "content": "Our prices are based on the needs and scope of your project, and we use Mercado Pago as a payment method."
+            },
+            {
+                "title": "Support and maintenance",
+                "ariaLabel": "Support",
+                "content": "After the launch of your application, we commit to providing the necessary support and maintenance to ensure it functions optimally over time."
+            },
+            {
+                "title": "Security and privacy",
+                "ariaLabel": "Security",
+                "content": "We implement advanced security measures, including SSL, firewalls, and secure coding practices to protect your website."
+            }
+        ]
     }
 }

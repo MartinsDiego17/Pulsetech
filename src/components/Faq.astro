@@ -1,0 +1,9 @@
+---
+import { AccordionFaq } from "./faq/AccordionFaq";
+const { content } = Astro.props;
+---
+
+<article class="h-fit w-[80%] mx-auto my-[20vh]">
+    <h1 class="lg:text-[1.5rem] 2xl:text-[3.3rem] text-[#ddd] text-[2.5rem] font-semibold">{content.title}</h1>
+    <AccordionFaq content={content.contents}  client:visible />
+</article>

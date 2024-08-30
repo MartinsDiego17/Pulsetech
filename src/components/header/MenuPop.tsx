@@ -30,10 +30,8 @@ const MenuPop: React.FC<MenuPopProps> = ({ content, content_modal }) => {
     en: false
   });
 
-
-
-  const [currentLogin, setCurrentLogin] = useState(getDataUser().isLoggin);
-
+/*   const [currentLogin, setCurrentLogin] = useState(getDataUser().isLoggin);
+ */
   useEffect(() => {
     const currentPath = window.location.pathname;
     const currentLocale = currentPath.startsWith('/en') ? 'en' : '/';
@@ -49,7 +47,7 @@ const MenuPop: React.FC<MenuPopProps> = ({ content, content_modal }) => {
     }
   }, []);
 
-  const handleLanguage = (event: React.MouseEvent<HTMLButtonElement> | undefined | any, language: string) => {
+  const handleLanguage = (language: string) => {
     const currentPath = window.location.pathname;
 
     if (language === "en" && !currentPath.startsWith("/en")) {
@@ -72,34 +70,34 @@ const MenuPop: React.FC<MenuPopProps> = ({ content, content_modal }) => {
       <PopoverContent className="lg:leading-[2.5] border border-[#222] lg:w-[70vw] lg:px-[10px] px-0 w-[20vw] flex dark">
         <div className="content-menupop text-[#ccc] py-[.5vw] w-full flex flex-col">
 
-          {
+{/*           {
             !currentLogin &&
             <a href="/login">
               <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
                 {content.login}
               </p>
             </a>
-          }
+          } */}
 
-          <a href="/meet">
+{/*           <a href="/meet">
             <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] hover:bg-[#222] cursor-pointer p-[.5vw] my-[.4vw] rounded-md">
               {content.meet}
             </p>
-          </a>
+          </a> */}
 
           <div>
             <p className="mx-[.5vw] text-[.8rem] 2xl:text-[1rem] p-[.5vw] my-[.4vw] mb-[0] rounded-md">
               {content.language} <i className="pl-[.5vw] text-primary fa-solid fa-earth-americas"></i>
             </p>
             <button
-              onClick={() => handleLanguage(event, "/")}
+              onClick={() => handleLanguage("/")}
               disabled={disabled.es}
               className="disabled:opacity-50 disabled:cursor-default disabled:hover:bg-transparent w-[95%] text-left mx-[.5vw] text-[.65rem] 2xl:text-[.8rem] hover:bg-[#222] cursor-pointer p-[.5vw] rounded-md"
             >
               {content.spanish}
             </button> <br />
             <button
-              onClick={() => handleLanguage(event, "en")}
+              onClick={() => handleLanguage("en")}
               disabled={disabled.en}
               className="disabled:opacity-50 disabled:cursor-default disabled:hover:bg-transparent w-[95%] text-left mx-[.5vw] text-[.65rem] 2xl:text-[.8rem] hover:bg-[#222] cursor-pointer p-[.5vw] rounded-md"
             >
@@ -107,14 +105,14 @@ const MenuPop: React.FC<MenuPopProps> = ({ content, content_modal }) => {
             </button>
           </div>
 
-          <hr className="w-full mt-[1vw] border-[#333]" />
-
-          <div className="flex place-items-center justify-center mt-[2%]">
+{/*           <hr className="w-full mt-[1vw] border-[#333]" />
+ */}
+{/*           <div className="flex place-items-center justify-center mt-[2%]">
             {
               currentLogin &&
               <ModalClose content={content_modal} />
             }
-          </div>
+          </div> */}
         </div>
       </PopoverContent>
     </Popover>

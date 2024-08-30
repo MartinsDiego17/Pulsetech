@@ -100,7 +100,7 @@
     },
     "go_work": {
         "title": "Vamos a trabajar",
-        "first_button": "Coordinar una reunión",
+        "first_button": "Cotiza tu aplicación",
         "second_button": "O envíanos un mensaje directo"
     },
     "footer": {
@@ -169,5 +169,40 @@
         "subtitle": "¿Estás seguro de querer cerrar sesión?",
         "button_cancel": "Cancelar",
         "button_confirm": "Confirmar"
+    },
+    "faq": {
+        "title": "Preguntas frecuentes",
+        "contents": [
+            {
+                "title": "¿Qué servicios ofrecemos?",
+                "ariaLabel": "Services",
+                "content": "Ofrecemos desarrollo web, diseño web, creación de aplicaciones móviles, optimización SEO, y mantenimiento de sitios web."
+            },
+            {
+                "title": "¿Cómo es el proceso de trabajo?",
+                "ariaLabel": "Process",
+                "content": "Nuestro proceso incluye: 1) Reunión inicial para entender sus necesidades, 2) Investigación y planificación, 3) Diseño, 4) Desarrollo, 5) Pruebas y revisión, 6) Lanzamiento, y 7) Soporte continuo."
+            },
+            {
+                "title": "¿Diseñan sitios web responsivos?",
+                "ariaLabel": "Design and develop",
+                "content": "Si, desarrollamos aplicaciones web adaptables a todas las resoluciones."
+            },
+            {
+                "title": "Precios y tipos de pago",
+                "ariaLabel": "Prices",
+                "content": "Nuestros precios se basan en las necesidades y en el alcance de tu proyecto, y como método de pago utilizamos Mercado Pago."
+            },
+            {
+                "title": "Soporte y mantenimiento",
+                "ariaLabel": "Support",
+                "content": "Luego del lanzamiento de tu aplicación, nos comprometemos a darle el soporte y el mantenimiento necesario para que funcione de manera óptima a lo largo del tiempo."
+            },
+            {
+                "title": "Seguridad y privacidad",
+                "ariaLabel": "Security",
+                "content": "Implementamos medidas de seguridad avanzadas, incluyendo SSL, firewalls, y prácticas de codificación seguras para proteger tu sitio web."
+            }
+        ]
     }
 }

@@ -7,8 +7,9 @@ import Works from "./Works.astro";
 import Contacto from "./Contacto.astro";
 import Footer from "./Footer.astro";
 import { getContents } from "../config-i18n/config-i18n.ts";
+import Faq from "./Faq.astro";
 
-const { layout, home, type_pages, benefits, go_work, footer } = getContents(
+const { layout, home, type_pages, benefits, go_work, footer,faq  } = getContents(
     Astro.currentLocale,
 );
 ---
@@ -22,5 +23,6 @@ const { layout, home, type_pages, benefits, go_work, footer } = getContents(
     <!-- <Works /> -->
 
     <Contacto content={go_work} />
+    <Faq content={faq} />
     <Footer content={footer} />
 </Layout>
