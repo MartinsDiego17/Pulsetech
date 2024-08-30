@@ -3,6 +3,8 @@ const pg = require('pg');
 const { Sequelize } = require('sequelize');
 const { DB_URL } = process.env;
 
+console.log("URL-DATABASE: ", DB_URL);
+
 const UsersModel = require("../models/Users");
 const MeetsModel = require("../models/Meets");
 
