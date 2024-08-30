@@ -9,7 +9,8 @@
             "Beneficios",
             "Trabajos",
             "Profesionales",
-            "Contacto"
+            "Contacto",
+            "Preguntas"
         ],
         "popover_elements": {
             "login": "Iniciar sesión",
