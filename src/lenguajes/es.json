@@ -204,5 +204,27 @@
                 "content": "Implementamos medidas de seguridad avanzadas, incluyendo SSL, firewalls, y prácticas de codificación seguras para proteger tu sitio web."
             }
         ]
+    },
+    "works": {
+        "title": "Nuestro último trabajo",
+        "text": "¿Te gustaría saber más sobre nuestra forma de trabajar? A lo largo del tiempo, hemos desarrollado numerosas aplicaciones web para una gran variedad de clientes. Sin embargo, este es el último trabajo que hemos llevado a cabo.",
+        "list_works": [
+            {
+                "title": "Santiago Zaporta",
+                "date": "septiembre de 2024",
+                "link": "https://santi-zaporta.vercel.app/"
+            },
+            {
+                "title": "Santiago Zaporta",
+                "date": "septiembre de 2024",
+                "link": "https://santi-zaporta.vercel.app/"
+            },
+            {
+                "title": "Santiago Zaporta",
+                "date": "septiembre de 2024",
+                "link": "https://santi-zaporta.vercel.app/"
+            }
+        ],
+        "button_site": "Ver sitio"
     }
 }

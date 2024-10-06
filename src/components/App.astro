@@ -9,16 +9,15 @@ import Footer from "./Footer.astro";
 import { getContents } from "../config-i18n/config-i18n.ts";
 import Faq from "./Faq.astro";
 
-const { layout, home, type_pages, benefits, go_work, footer,faq  } = getContents(
-    Astro.currentLocale,
-);
+const { layout, home, type_pages, benefits, go_work, footer, faq, works } =
+    getContents(Astro.currentLocale);
 ---
 
 <Layout title={layout.title}>
     <Home content={home} />
     <TypeProjects content={type_pages} />
     <Beneficios content={benefits} />
-
+    <Works content={works} />
     <Contacto content={go_work} />
     <Faq content={faq} />
     <Footer content={footer} />

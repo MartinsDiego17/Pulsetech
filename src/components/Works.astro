@@ -1,69 +1,33 @@
 ---
-import Work from "./works/Work.astro";
+import Work from "./works/Work.astro"
+import { works_images } from "data/images";
+const { content } = Astro.props;
+const { title, text, list_works, button_site } = content;
+interface WorkConfig {
+    title: string
+    date: string
+    link: string
+};
 ---
 
-<div id="works" class="lazy-section logos flex h-[30vh] lg:h-[20vh] pb-[50vh] mb-[50vh]">
-    <div class="logos-slide flex w-fit py-[60px]">
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-    </div>
-    <div class="logos-slide flex w-fit py-[60px]">
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-        <Work />
-    </div>
-</div>
+<article class="lg:my-[0] w-screen h-fit my-[20vh]">
+    <section class="w-[80%] mx-auto">
+        <article>
+            <h2 class="lg:text-[2rem] lg:mb-[1vh] lg:text-center text-white font-extrabold text-[3rem] mb-[5vh]">{title}</h2>
+            <p class="text-[#aaa]">{text}</p>
+        </article>
 
-<style>
-    @keyframes slide {
-        from {
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(-100%);
-        }
-    }
+<!--         <article class="mt-[5vh] w-full h-fit grid grid-cols-1 gap-x-[12px] gap-y-[6px]">
+            {
+                list_works.map(( work : WorkConfig, index : number ) => (
+                    <Work currentWork={work} image={works_images[index]} />
+                ))
+            }
+        </article> -->
 
-    .logos {
-        position: relative;
-        overflow: hidden;
-        height: 30vh;
-    }
+        <article class="mt-[5vh] w-full h-fit">
+            <Work textButton={button_site} currentWork={list_works[0]} image={works_images[0]} />
+        </article>
 
-    .logos::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to right, rgba(0,0,0,1), transparent, rgba(0,0,0,1));
-        pointer-events: none;
-        z-index: 10;
-        top: 0;
-        left: 0;
-    }
-
-    .logos:hover .logos-slide {
-        animation-play-state: paused;
-    }
-
-    .logos-slide {
-        box-shadow: 0px 0px 100px #121212;
-        white-space: nowrap;
-        animation: 35s slide infinite linear;
-    }
-</style>
+    </section>
+</article>

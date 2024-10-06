@@ -141,6 +141,16 @@ interface FaqConfig {
     }[];
 }
 
+interface WorksConfig {
+    title: string
+    text: string
+    list_works: {
+        title: string
+        date: string
+        link: string
+    }[]
+    button_site: string
+}
 
 export const getContents = (current: any) => {
     const i18n = getI18N({ currentLocale: current });
@@ -158,6 +168,7 @@ export const getContents = (current: any) => {
     const register: RegisterConfig = i18n.register;
     const modal_close: ModalcloseConfig = i18n.modal_close;
     const faq: FaqConfig = i18n.faq;
+    const works: WorksConfig = i18n.works;
 
     return {
         layout,
@@ -172,6 +183,7 @@ export const getContents = (current: any) => {
         login,
         register,
         modal_close,
-        faq
+        faq,
+        works
     }
 };

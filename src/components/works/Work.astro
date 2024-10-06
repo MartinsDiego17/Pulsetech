@@ -1,59 +1,83 @@
+---
+import { Button } from "@nextui-org/react";
+const { currentWork, image, textButton } = Astro.props;
+const { title, date, link } = currentWork;
+---
+
 <div
-    class="relative flex justify-center place-items-center lg:w-[70vw] lg:h-[20vh]  w-[30vw] h-[30vh] bg-white mx-[3vw] brightness-150 bg-cover bg-center"
-    style="background-image: url('../../../images/works/labarra.jpeg'); "
+    class="lg:h-[25vh] w-[100%] mx-auto duration-200 local-father rounded-[8px] border-1.5 border-[#252525] p-[3px]"
 >
-    <a href="#" class="m-auto absolute z-[20] opacity-0">
-        <button
-            class="gap-x-2 rounded-full brightness-75 hover:brightness-[85%] transition duration-500 bg-primary py-[.5vw] px-[2vw]"
-        >
-            <span>Ver sitio</span>
-            <span><i class="opacity-50 fa-solid fa-link"></i></span>
-        </button>
-    </a>
+    <div class="lg:h-full relative">
+        <img src={image} class="lg:h-full rounded-[8px] w-full" />
+        <div class="image-overlay"></div>
+
+        <div class="absolute-content">
+            <p
+                class="font-semibold text-[.8rem] text-[#eee] flex justify-between"
+            >
+                <span>{title}</span>
+                <span>{date}</span>
+            </p>
+            <a href={link} target="_blank">
+                <Button
+                    client:visible
+                    className="hover:text-white flex gap-x-2 font-bold min-h-[45px] rounded-[8px] w-full bg-[#222] text-[#eee] border-1 border-[#333]"
+                >
+                    <span>{textButton}</span>
+                    <span class="rotate-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </Button>
+            </a>
+        </div>
+    </div>
 </div>
 
 <style>
-    @keyframes openMock {
-        from {
-            height: 0;
-            border-top-right-radius: 500px;
-            border-top-left-radius: 500px;
-        }
-        to {
-            border-top-right-radius: 0;
-            border-top-left-radius: 0;
-            height: 100%;
-        }
-    }
-
-    div {
+    .relative {
         position: relative;
-        z-index: 10;
-        overflow: hidden;
-        background-size: cover; /* Asegura que la imagen cubra el div */
-        background-position: center; /* Centra la imagen en el div */
     }
 
-    div::before {
+    .image-overlay::before {
         content: "";
         position: absolute;
         width: 100%;
-        height: 0;
-        pointer-events: none;
-        background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(3px);
-        bottom: 0;
+        height: 100%;
+        top: 0;
         left: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 1));
         z-index: 1;
-        transition: opacity 0.4s;
-        opacity: 0;
     }
 
-    div:hover::before {
-        opacity: 1;
-        animation: openMock 0.4s forwards;
+    .relative img {
+        z-index: 0;
     }
-    div:hover a {
-        opacity: 1;
+
+    .absolute-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+
+    .absolute-content p {
+        margin-bottom: 1rem;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .absolute-content a {
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    .rotate-arrow {
+        transform: rotate(-45deg);
     }
 </style>
