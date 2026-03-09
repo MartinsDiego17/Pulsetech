@@ -44,4 +44,4 @@ Auditoría, rediseño y mejora de performance para proyectos que necesitan una s
 
 ¿Tenés un proyecto en mente?
 
-**[contacto@pulsetech.com](mailto:contacto@pulsetech.com)**
+**[diegomartinsupe@hotmail.com](mailto:diegomartinsupe@hotmail.com)**
