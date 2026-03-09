@@ -30,4 +30,4 @@ Desarrollada con **Astro**, por su modelo de generación estática que garantiza
 
 ## Estado del proyecto
 
-Proyecto entregado y en producción como sitio oficial de la agencia.
+Proyecto finalizado.
